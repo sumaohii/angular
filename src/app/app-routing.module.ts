@@ -6,11 +6,11 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { 
-    path: 'Register', 
+    path: 'register', 
     component: RegisterComponent
   },
   { 
-    path: 'Login', 
+    path: 'login', 
     component: LoginComponent
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   { 
     path: '', 
-    redirectTo: 'Login', 
+    redirectTo: 'login', 
     pathMatch: 'full'
   },
 ]
