@@ -8,10 +8,18 @@ import { UserService } from '../user.service';
 })
 
 export class RegisterComponent implements OnInit {
-   angForm : FormGroup;
-  constructor(private fb: FormBuilder, private ps: UserService) {
-   this.createForm();
-    }
+  angForm: any;
+  fb: any;
+  ps: any;
+  
+   ngOnInit() {
+     
+   }
+
+  //   angForm : FormGroup;
+  // constructor(private fb: FormBuilder, private ps: UserService) {
+  //  this.createForm();
+  //   }
 
    createForm() {
     this.angForm = this.fb.group({
@@ -24,9 +32,4 @@ export class RegisterComponent implements OnInit {
    addUser(UserName, PassWord, Email) {
      this.ps.addUser(UserName, PassWord, Email);
    }
-
-   ngOnInit() {
-     
-   }
-
 }
