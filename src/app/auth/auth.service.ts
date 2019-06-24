@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from  './user';
 import { JwtResponse } from  './jwt-response';
 import { tap } from  'rxjs/operators';
@@ -15,7 +15,10 @@ export class AuthService {
   authSubject  =  new  BehaviorSubject(false);
 
   register(user: User): Observable<JwtResponse> {
-    return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user).pipe(
+    let headers = new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : 'http://142.93.253.93:81/web-api', 'Access-Control-Allow-Credentials':'true' });
+   
+ 
+    return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, { headers }).pipe(
       tap((res:  JwtResponse ) => {
 
         if (res.user) {
