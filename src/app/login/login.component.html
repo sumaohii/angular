@@ -5,7 +5,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 	<div class="row">
 		<div class="col-md-6 offset-md-3 mt-5 p-5">
 			<div class="col-md-12">
-				<form>
+					<form name="form" [formGroup]="form">
 					<!-- Login text -->
 					<div class="form-group">
 						<h2 class="text-center">Login</h2>
@@ -15,7 +15,10 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 						<label class="col-sm-2 col-form-label">UserName</label>
 			
 					    <div class="col-sm-10">
-					      	<input type="text" class="form-control" id="staticEmail" placeholder="someone@napaglobal.com">
+								<input type="text"class="form-control" formControlName="userName" [ngClass]="{'is-invalid' : form.get('userName').touched && form.get('userName').invalid}" />
+								<div class="invalid-feedback">
+									<div>UserName Is Not Null</div>
+								</div>
 					    </div>
 				  	</div>
 				  	<!-- Input password section-->
@@ -23,7 +26,11 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 						<label class="col-sm-2 col-form-label">Password</label>
 								 
 					    <div class="col-sm-10">
-					      	<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+								<input type="password"class="form-control" formControlName="passWord" [ngClass]="{'is-invalid' : form.get('passWord').touched && form.get('passWord').invalid}" />
+								<div *ngIf="form.get('passWord').touched && form.get('passWord').invalid" class="invalid-feedback">
+									<div *ngIf="form.get('passWord').errors.required">PassWord Is Not Null</div>
+									<div *ngIf="form.get('passWord').errors.minlength">PassWord must be at least 8 characters</div>
+								</div>
 					    </div>
 
 					</div>
@@ -31,7 +38,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 			</div>
 			<!-- Login button -->
 			<div class="col-md-12">
-        <button type="button" class="col-md-4 offset-md-4 btn btn-outline-secondary btn-md btn-block a">Login</button> 
+        <button type="button" class="col-md-4 offset-md-4 btn btn-outline-secondary btn-md btn-block a" [disabled]='!form.valid'>Login</button> 
 			</div>
 			<!-- Register link-->
 			<div class="col-md-8 offset-md-4 alert">

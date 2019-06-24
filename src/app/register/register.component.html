@@ -6,46 +6,61 @@
         <div class="form-group ">
             <h2 class="text-center">Register</h2>
         </div>
-        <form >
+        
+        <form name="form" [formGroup]="form">
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">UserName</label>
+                <label for="userName" class="col-sm-2 col-form-label">UserName</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="staticEmail" placeholder="Your ID">
+                    <input type="text"class="form-control" formControlName="userName" [ngClass]="{'is-invalid' : form.get('userName').touched && form.get('userName').invalid}" />
+                    <div class="invalid-feedback">
+                        <div>UserName Is Not Null</div>
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <label for="passWord" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    <input type="password"class="form-control" formControlName="passWord" [ngClass]="{'is-invalid' : form.get('passWord').touched && form.get('passWord').invalid}" />
+                    <div *ngIf="form.get('passWord').touched && form.get('passWord').invalid" class="invalid-feedback">
+                        <div *ngIf="form.get('passWord').errors.required">PassWord Is Not Null</div>
+                        <div *ngIf="form.get('passWord').errors.minlength">PassWord must be at least 8 characters</div>
+                    </div>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="staticEmail" placeholder="email@example.com">
+                    <input type="text"class="form-control" formControlName="email" [ngClass]="{'is-invalid' : form.get('email').touched && form.get('email').invalid}" />
+                    <div *ngIf="form.get('email').touched && form.get('email').invalid" class="invalid-feedback">
+                           <div *ngIf="form.get('email').errors.required">Email Is Not Null</div>  
+                           <div *ngIf="form.get('email').errors.email">Email must be a valid email address</div>                                           
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group pt-2">
+                <div class="btn1">
+                    <div class="col-md-6 offset-md-3 row">
+                        <button onclick="register()" type="submit"
+                            class="col-md-5 btn btn-primary" [disabled]='!form.valid'>
+                            Register
+                        </button>
+    
+                        <button routerLink="/login" type="button" class="col-md-5 offset-md-2 btn btn-outline-danger"
+                                >Cancel</button>
+    
+    
+                    </div>
                 </div>
             </div>
 
         </form>
+        
 
 
-
-        <div class="form-group pt-2">
-            <div class="btn1">
-                <div class="col-md-6 offset-md-3 row">
-                    <button (click)="addUser(UserName.value, PassWord.value, Email.value)" type="submit"
-                        class="col-md-5 btn btn-primary" >
-                        Register
-                    </button>
-
-                    <button routerLink="/login" type="button" class="col-md-5 offset-md-2 btn btn-outline-danger"
-                            >Cancel</button>
-
-
-                </div>
-            </div>
-        </div>
+        
 
     </div>
 </div>

@@ -8,21 +8,36 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserService } from './user.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule} from '@angular/common';
+import { AuthService } from './auth/auth.service';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
+
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SlimLoadingBarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AuthService,
+    
+  
+ 
   ],
-  providers: [UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

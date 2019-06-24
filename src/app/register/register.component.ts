@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../user.service';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { from } from 'rxjs';
+import { AuthService } from './../auth/auth.service'
+import { User } from './../auth/user';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,28 +13,33 @@ import { UserService } from '../user.service';
 })
 
 export class RegisterComponent implements OnInit {
-  angForm: any;
-  fb: any;
-  ps: any;
   
-   ngOnInit() {
-     
-   }
 
-  //   angForm : FormGroup;
-  // constructor(private fb: FormBuilder, private ps: UserService) {
-  //  this.createForm();
-  //   }
 
-   createForm() {
-    this.angForm = this.fb.group({
-      UserName: ['', Validators.required ],
-      PassWord: ['', Validators.required ],
-      Email: ['', Validators.required ]
+  form = new FormGroup ({  
+
+    
+
+    userName: new FormControl('',Validators.required),
+    passWord: new FormControl('',[Validators.required, Validators.minLength(8)]),
+    email: new FormControl('',[Validators.required, Validators.email])
+
+  })
+  
+  constructor(private authService: AuthService, private router: Router) { }
+
+  
+
+  ngOnInit() {}
+
+ register(form) {
+    console.log(form.value);
+    this.authService.register(form.value).subscribe((res) => {
+      this.router.navigateByUrl('home');
     });
-
   }
-   addUser(UserName, PassWord, Email) {
-     this.ps.addUser(UserName, PassWord, Email);
-   }
-}
+  }
+
+  
+
+  
