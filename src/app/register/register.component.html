@@ -7,7 +7,7 @@
             <h2 class="text-center">Register</h2>
         </div>
         
-        <form name="form" [formGroup]="form">
+        <form name="form" [formGroup]="form" onsubmit="">
             <div class="form-group row">
                 <label for="userName" class="col-sm-2 col-form-label">UserName</label>
                 <div class="col-sm-10">
@@ -43,7 +43,7 @@
             <div class="form-group pt-2">
                 <div class="btn1">
                     <div class="col-md-6 offset-md-3 row">
-                        <button onclick="register()" type="submit"
+                        <button (click)="register(ngForm)" type="submit"
                             class="col-md-5 btn btn-primary" [disabled]='!form.valid'>
                             Register
                         </button>
