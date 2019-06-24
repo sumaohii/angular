@@ -10,12 +10,12 @@ import { Observable, BehaviorSubject } from  'rxjs';
 })
 export class AuthService {
 
-  AUTH_SERVER = "http://142.93.253.93:81/web-api/new";
+  AUTH_SERVER = "http://142.93.253.93:81/web-api";
 
   authSubject  =  new  BehaviorSubject(false);
 
   register(user: User): Observable<JwtResponse> {
-    return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/register`, user).pipe(
+    return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user).pipe(
       tap((res:  JwtResponse ) => {
 
         if (res.user) {
