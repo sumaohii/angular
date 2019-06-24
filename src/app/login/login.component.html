@@ -28,7 +28,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 					    <div class="col-sm-10">
 								<input type="password"class="form-control" formControlName="passWord" [ngClass]="{'is-invalid' : form.get('passWord').touched && form.get('passWord').invalid}" />
 								<div *ngIf="form.get('passWord').touched && form.get('passWord').invalid" class="invalid-feedback">
-									<div *ngIf="form.get('passWord').errors.required">PassWord Is Not Null</div>
+									<div *ngIf="form.get('passWord').errors.required">PassWord cannot be null</div>
 									<div *ngIf="form.get('passWord').errors.minlength">PassWord must be at least 8 characters</div>
 								</div>
 					    </div>
@@ -38,7 +38,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 			</div>
 			<!-- Login button -->
 			<div class="col-md-12">
-        <button type="button" class="col-md-4 offset-md-4 btn btn-outline-secondary btn-md btn-block a" [disabled]='!form.valid'>Login</button> 
+		<button ng-submit = "login(form)" type="button" class="col-md-4 offset-md-4 btn btn-outline-secondary btn-md btn-block a" [disabled]='!form.valid'>Login</button> 
 			</div>
 			<!-- Register link-->
 			<div class="col-md-8 offset-md-4 alert">

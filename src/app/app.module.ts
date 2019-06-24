@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule} from '@angular/common';
-//import { AuthService } from './auth/auth.service';
+import { AuthService } from './auth/auth.service';
 
 
 
