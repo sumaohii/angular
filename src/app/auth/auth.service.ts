@@ -2,35 +2,37 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from  './user';
 import { JwtResponse } from  './jwt-response';
-import { tap } from  'rxjs/operators';
+import { catchError, map, tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
-
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+   
   AUTH_SERVER = "http://142.93.253.93:81/web-api";
 
   authSubject  =  new  BehaviorSubject(false);
 
   register(user: User): Observable<JwtResponse> {
-    let headers = new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : 'http://142.93.253.93:81/web-api', 'Access-Control-Allow-Credentials':'true' });
+   // let headers = new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : 'http://142.93.253.93:81/web-api/new', 'Access-Control-Allow-Credentials':'true' });
    
  
-    return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, { headers }).pipe(
-      tap((res:  JwtResponse ) => {
+    return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, httpOptions)
+    //.pipe(
+    //  tap((res:  JwtResponse ) => {
 
-        if (res.user) {
-          localStorage.setItem("ACCESS_TOKEN", res.user.access_token);
-          localStorage.set("EXPIRES_IN", res.user.expires_in);
-          this.authSubject.next(true);
-        }
-      })
-
-    );
+        // if (res.user) {
+        //   localStorage.setItem("ACCESS_TOKEN", res.user.access_token);
+        //   localStorage.set("EXPIRES_IN", res.user.expires_in);
+        //   this.authSubject.next(true);
+        // }
+    //  })
+  //  )
   }
-
 
   login(user: User): Observable<JwtResponse> {
     return this.httpClient.post(`${this.AUTH_SERVER}/login`, user).pipe(

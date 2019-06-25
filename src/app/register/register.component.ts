@@ -11,31 +11,21 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-
 export class RegisterComponent implements OnInit {
-  
-
-
-  form = new FormGroup ({  
-
-    
-
-    userName: new FormControl('',Validators.required),
-    passWord: new FormControl('',[Validators.required, Validators.minLength(8)]),
+    form = new FormGroup ({  
+    username: new FormControl('',Validators.required),
+    password: new FormControl('',[Validators.required, Validators.minLength(8)]),
     email: new FormControl('',[Validators.required, Validators.email])
 
   })
-  
   constructor(private authService: AuthService, private router: Router) { }
-
-  
-
   ngOnInit() {}
 
  register(form) {
-    console.log(form.value);
+  console.log(form.value);
     this.authService.register(form.value).subscribe((res) => {
-      this.router.navigateByUrl('home');
+      this.router.navigateByUrl('/profile');
+      
     });
   }
   }
