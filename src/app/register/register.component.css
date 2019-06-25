@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.col-md-6.offset-md-3.mt-5.p-5 {
+    background-color: whitesmoke;
+    border-radius: 10px;
+
+}
+h2.text-center{
+    font-size: 40px;
+}
