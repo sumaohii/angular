@@ -1,9 +1,14 @@
 export interface JwtResponse {
-    user: {
-        userName: string,
-        passWord: string,
+    statusCode: number;
+    message: string;
+    data: {
+        username: string,
         email: string,
-        access_token: string,
-        expires_in: number
+        role: string,
+        token: string,
+       // expires_in: number
+    }
+    todo: {
+        verifyEmail: string;
     }
 }

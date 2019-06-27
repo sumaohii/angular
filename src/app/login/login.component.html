@@ -1,53 +1,61 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 offset-md-3 mt-5 p-5">
 			<div class="col-md-12">
-					<form name="form" [formGroup]="form">
+				
 					<!-- Login text -->
 					<div class="form-group">
 						<h2 class="text-center">Login</h2>
 					</div>
+					<form name="form" [formGroup]="form" #myform ="ngForm" (ngSubmit)="login(myform)">
 					<!-- Input Username section-->
 					<div class="form-group row">
-						<label class="col-sm-2 col-form-label">UserName</label>
-			
-					    <div class="col-sm-10">
-								<input type="text"class="form-control" formControlName="userName" [ngClass]="{'is-invalid' : form.get('userName').touched && form.get('userName').invalid}" />
-								<div class="invalid-feedback">
-									<div>UserName Is Not Null</div>
-								</div>
-					    </div>
-				  	</div>
-				  	<!-- Input password section-->
-				  	<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Username</label>
+
+						<div class="col-sm-10">
+							<input type="text" class="form-control" formControlName="username"
+								[ngClass]="{'is-invalid' : form.get('username').touched && form.get('username').invalid}" />
+							<div class="invalid-feedback">
+								<div>Username Is Not Null</div>
+							</div>
+						</div>
+					</div>
+					<!-- Input password section-->
+					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">Password</label>
-								 
-					    <div class="col-sm-10">
-								<input type="password"class="form-control" formControlName="passWord" [ngClass]="{'is-invalid' : form.get('passWord').touched && form.get('passWord').invalid}" />
-								<div *ngIf="form.get('passWord').touched && form.get('passWord').invalid" class="invalid-feedback">
-									<div *ngIf="form.get('passWord').errors.required">PassWord cannot be null</div>
-									<div *ngIf="form.get('passWord').errors.minlength">PassWord must be at least 8 characters</div>
-								</div>
-					    </div>
+
+						<div class="col-sm-10">
+							<input type="password" class="form-control" formControlName="password"
+								[ngClass]="{'is-invalid' : form.get('password').touched && form.get('password').invalid}" />
+							<div *ngIf="form.get('password').touched && form.get('password').invalid"
+								class="invalid-feedback">
+								<div *ngIf="form.get('password').errors.required">Password cannot be null</div>
+								<div *ngIf="form.get('password').errors.minlength">Password must be at least 8
+									characters</div>
+							</div>
+						</div>
 
 					</div>
-				</form>		
+					<div class="col-md-12">
+						<button type="submit"
+							class="col-md-4 offset-md-4 btn btn-outline-secondary btn-md btn-block a"
+							[disabled]='!form.valid'>Login</button>
+					</div>
+				</form>
+					<div class="col-md-8 offset-md-4 alert">
+						Not have account yet? <a routerLink="/register" class="alert-link">Create one</a>
+					</div>
+				
 			</div>
-			<!-- Login button -->
-			<div class="col-md-12">
-		<button ng-submit = "login(form)" type="button" class="col-md-4 offset-md-4 btn btn-outline-secondary btn-md btn-block a" [disabled]='!form.valid'>Login</button> 
-			</div>
-			<!-- Register link-->
-			<div class="col-md-8 offset-md-4 alert">
-					Not have account yet? <a routerLink="/register" class="alert-link">Create one</a>
-      </div>
-      
-    </div>
-			
-			
+
+
+
+		</div>
+
+
 	</div>
 
 </div>
