@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from  './user';
 import { JwtResponse } from  './jwt-response';
-import { catchError, map, tap } from  'rxjs/operators';
+import {  tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,10 +17,8 @@ export class AuthService {
 
   authSubject  =  new  BehaviorSubject(false);
 
-  register(user: User): Observable<JwtResponse> {
-    // let headers = new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : 'http://142.93.253.93:81/web-api/new', 'Access-Control-Allow-Credentials':'true' });
-    
-  
+  register(user: User): Observable<JwtResponse> {  
+
      return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, httpOptions)
      .pipe(
       tap((res:  JwtResponse ) => {
@@ -40,8 +38,9 @@ export class AuthService {
       tap(async (res: JwtResponse) => {
         console.log(res);
         if (res.data) {
-          localStorage.setItem("ACCESS_TOKEN", res.data.token);
-          // localStorage.set("EXPIRES_IN", res.user.expires_in);
+
+          localStorage.setItem("ACCESS_TOKEN", res.data.token);       
+
           this.authSubject.next(true);
         }
       })

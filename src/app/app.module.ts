@@ -13,8 +13,10 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule} from '@angular/common';
 import { AuthService } from './auth/auth.service';
-
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
+import { AlertComponent } from './alert/alert.component';
+import { VerifyemailComponent } from './verifyemail/verifyemail.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,8 @@ import { AuthService } from './auth/auth.service';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-
-  
+    AlertComponent,
+    VerifyemailComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,12 +34,10 @@ import { AuthService } from './auth/auth.service';
     SlimLoadingBarModule,
     FormsModule,
     ReactiveFormsModule,
-    //AuthService,
-    
+
   
- 
   ],
-  providers: [],
+  providers: [RegisterComponent,VerifyemailComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

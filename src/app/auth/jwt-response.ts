@@ -5,8 +5,8 @@ export interface JwtResponse {
         username: string,
         email: string,
         role: string,
-        token: string,
-       // expires_in: number
+        token: string,     
+
     }
     todo: {
         verifyEmail: string;

@@ -3,7 +3,7 @@ import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from './../auth/auth.service'
 import { User } from './../auth/user';
-
+import {AlertService} from './../alert/alert.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     username: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required)
   })
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private alertService: AlertService) { }
   ngOnInit() {}
   login(form){
     console.log(form.value);
@@ -22,7 +22,11 @@ export class LoginComponent implements OnInit {
       (res)=>{
         if (res.data) {
       console.log("Logged in!");
+      this.alertService.success(res.message);
       this.router.navigateByUrl('/profile');}
-    else  console.log ("Could not authenticate")});    
+    else {
+        console.log ("Could not authenticate");
+        this.alertService.error(res.message);}
+      });    
 }
 }
