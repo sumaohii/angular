@@ -10,25 +10,19 @@ import { User } from './../auth/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-   
-
   form = new FormGroup ({  
-
-    userName: new FormControl('',Validators.required),
-    passWord: new FormControl('',Validators.required)
+    username: new FormControl('',Validators.required),
+    password: new FormControl('',Validators.required)
   })
-
   constructor(private authService: AuthService, private router: Router) { }
-
   ngOnInit() {}
-  
-  
   login(form){
     console.log(form.value);
-    this.authService.login(form.value).subscribe((res)=>{
+    this.authService.login(form.value).subscribe(
+      (res)=>{
+        if (res.data) {
       console.log("Logged in!");
-      this.router.navigateByUrl('home');
-    });    
-  }
+      this.router.navigateByUrl('/profile');}
+    else  console.log ("Could not authenticate")});    
+}
 }

@@ -12,8 +12,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule} from '@angular/common';
-
-import { Pipe, PipeTransform } from '@angular/core';
+import { AuthService } from './auth/auth.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
+import { AlertComponent } from './alert/alert.component';
+import { VerifyemailComponent } from './verifyemail/verifyemail.component';
 
 @NgModule({
   declarations: [
@@ -21,21 +24,20 @@ import { Pipe, PipeTransform } from '@angular/core';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-
+    AlertComponent,
+    VerifyemailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
     SlimLoadingBarModule,
     FormsModule,
     ReactiveFormsModule,
 
-    
   
   ],
-  providers: [],
+  providers: [RegisterComponent,VerifyemailComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
