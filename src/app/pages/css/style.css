@@ -41,39 +41,39 @@
     margin: 0 auto;
     -webkit-transition: padding 300ms ease-in-out;
             transition: padding 300ms ease-in-out; }
-    header a {
+header a {
       color: #fff;
       text-transform: uppercase;
       font-size: 13px; }
-      header img {
+header img {
         max-width: 15%;
         height:auto;
       }
-      header a.login {
+header a.login {
         margin-right: 20px; }
-    header .logo {
+header .logo {
       display: inline-block; }
-    header ul.primary-nav {
-      margin: 0 0 0 75px;
+header ul.primary-nav {
+      margin: 0 0 0 0px;
       padding: 0; }
-    header ul.primary-nav li {
+header ul.primary-nav li {
         display: inline; }
-    header ul.primary-nav li a {
+header ul.primary-nav li a {
           color: #fff;
           padding-right: 25px; }
-    header ul.primary-nav li a:hover {
+header ul.primary-nav li a:hover {
             color: #FF5274; }
-    header ul.primary-nav li:last-child a {
+header ul.primary-nav li:last-child a {
           padding-right: 0px; }
-    header ul.member-actions li {
+header ul.member-actions li {
       display: inline; }
-    header ul.member-actions li a {
+header ul.member-actions li a {
         color: #fff; }
-        header ul.member-actions li a:hover {
+header ul.member-actions li a:hover {
           color: #FF5274; }
-    header .header-nav {
+header .header-nav {
       display: inline-block; }
-    header .member-actions {
+header .member-actions {
       position: absolute;
       right: 0;
       top: 41px;

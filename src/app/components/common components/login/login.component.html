@@ -21,11 +21,7 @@
 							<input type="text" class="form-control" formControlName="username"
 								[ngClass]="{'is-invalid' : form.get('username').touched && form.get('username').invalid}" />
 							<div class="invalid-feedback">
-<<<<<<< HEAD
-								<div>Username Is Not Null</div>
-=======
 								<div>Username cannot be null</div>
->>>>>>> b68265324849dbb66abc62fcfe29fd38bdde9d02
 							</div>
 						</div>
 					</div>
@@ -39,12 +35,9 @@
 							<div *ngIf="form.get('password').touched && form.get('password').invalid"
 								class="invalid-feedback">
 								<div *ngIf="form.get('password').errors.required">Password cannot be null</div>
-<<<<<<< HEAD
 								<div *ngIf="form.get('password').errors.minlength">Password must be at least 8
 									characters</div>
-=======
-					
->>>>>>> b68265324849dbb66abc62fcfe29fd38bdde9d02
+
 							</div>
 						</div>
 
