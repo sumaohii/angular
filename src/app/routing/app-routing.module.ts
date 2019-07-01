@@ -1,9 +1,9 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
-import { VerifyemailComponent } from './verifyemail/verifyemail.component';
+import { RegisterComponent } from '../components/common components/register/register.component';
+import { LoginComponent } from '../components/common components/login/login.component';
+import { ProfileComponent } from '../components/common components/profile/profile.component';
+import { VerifyemailComponent } from '../components/common components/verifyemail/verifyemail.component';
 
 const routes: Routes = [
   { 

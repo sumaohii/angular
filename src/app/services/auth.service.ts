@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from  './user';
-import { JwtResponse } from  './jwt-response';
+import { User } from  '../models/user';
+import { JwtResponse } from  '../models/jwt-response';
 import {  tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
 const httpOptions = {
