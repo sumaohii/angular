@@ -4,6 +4,7 @@ import { User } from  '../models/user';
 import { JwtResponse } from  '../models/jwt-response';
 import {  tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
+import {ResentMessage} from '../models/resent-email'
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -51,6 +52,9 @@ export class AuthService {
   isAuthenticated() {
     return  this.authSubject.asObservable();
 }
-
+resend() {
+  return this.httpClient.get(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
+}
   constructor(private httpClient: HttpClient) { }
 }
+
