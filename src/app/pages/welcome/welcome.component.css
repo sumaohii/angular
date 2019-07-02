@@ -14,7 +14,8 @@
 }
 .welcome h1 {
     color: #fff;
-    margin-bottom: 40px; }
+    margin-bottom: 40px; 
+    font-size: 50px;}
  .welcome p.intro {
         color: #fff;
         font-size: 20px;
@@ -46,7 +47,7 @@ header {
 header a {
       color: #fff;
       text-transform: uppercase;
-      font-size: 16px; }
+      font-size: 15px; }
 header img {
         max-width: 15%;
         height:auto;
@@ -157,7 +158,7 @@ header .member-actions {
 
 /* TYPOGRAPHY */
   p {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 29px;
     color: rgba(28, 54, 83, 0.6);
     padding-bottom: 20px; }
@@ -185,7 +186,7 @@ header .member-actions {
     font-weight: 500; }
   
   .btn {
-    font-size: 16px;
+    font-size: 15px;
     border: solid 2px;
     border-radius: 40px;
     display: inline-block;
@@ -197,7 +198,7 @@ header .member-actions {
     background-color: #008080; }
   
   .btn-white {
-    font-size: 16px;
+    font-size: 15px;
     border: solid 2px; 
     border-radius: 40px;
     display: inline-block;
@@ -209,7 +210,7 @@ header .member-actions {
   
   .btn-fill {
     /* color: #fff; */
-    border: solid 40px rgb(154, 192, 182);
+    /* border: solid 40px rgb(154, 192, 182); */
     border-radius: 40px;
     display: inline-block;
     text-transform: uppercase; 
@@ -221,10 +222,10 @@ header .member-actions {
     border-color: rgb(36, 138, 121); }
   
   .btn-small {
-    padding: 8px 40px; }
+    padding: 6px 25px; }
   
   .btn-large {
-    padding: 15px 40px; }
+    padding: 12px 25px; }
   
   .btn-margin-right {
     margin-right: 20px; }
@@ -278,9 +279,10 @@ footer {
     padding: 30px 0 60 0px; }
     footer .social-share p {
       color: #fff;
-      font-size: 16px;
+      font-size: 20px;
       text-transform: uppercase;
       text-align: center!important;
+      margin-top: 30px;
       margin-bottom: 10px;
       padding-bottom: 0;
     }

@@ -4,14 +4,14 @@ import { RegisterComponent } from '../components/common components/register/regi
 import { LoginComponent } from '../components/common components/login/login.component';
 import { ProfileComponent } from '../components/common components/profile/profile.component';
 import { VerifyemailComponent } from '../components/common components/verifyemail/verifyemail.component';
-
+import { WelcomeComponent } from '../pages/welcome/welcome.component';
 const routes: Routes = [
-  { 
-    path: 'register', 
+  {
+    path: 'register',
     component: RegisterComponent
   },
-  { 
-    path: 'login', 
+  {
+    path: 'login',
     component: LoginComponent
   },
   {
@@ -19,12 +19,16 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
-    path:'verifyemail',
+    path: 'verifyemail',
     component: VerifyemailComponent
   },
-  { 
-    path: '', 
-    redirectTo: 'login', 
+  {
+    path: 'welcome',
+    component: WelcomeComponent
+  },
+  {
+    path: '',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
 ]
