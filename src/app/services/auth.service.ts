@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from  '../models/user';
 import { JwtResponse } from  '../models/jwt-response';
-import {  tap } from  'rxjs/operators';
+import { tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
-import {EmailResend} from '../models/email-resend';
+import {ResentMessage} from '../models/resent-email'
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -52,11 +53,9 @@ export class AuthService {
   isAuthenticated() {
     return  this.authSubject.asObservable();
 }
- 
-constructor(private httpClient: HttpClient) { }
 
-resend(): Observable<EmailResend>{
- return this.httpClient.get<EmailResend>(`${this.AUTH_SERVER}/confirmation/verify-email/resend`);
+resend(): Observable<ResentMessage> {
+  return this.httpClient.get<ResentMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
 }
-  
+  constructor(private httpClient: HttpClient) { }
 }
