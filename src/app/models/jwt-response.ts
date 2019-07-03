@@ -6,6 +6,7 @@ export interface JwtResponse {
         email: string,
         role: string,
         token: string,     
+
     }
     todo: {
         verifyEmail: string;

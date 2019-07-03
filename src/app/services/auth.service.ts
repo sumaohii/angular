@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from  './user';
-import { JwtResponse } from  './jwt-response';
+import { User } from  '../models/user';
+import { JwtResponse } from  '../models/jwt-response';
 import {  tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
+import {EmailResend} from '../models/email-resend';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -18,6 +19,7 @@ export class AuthService {
   authSubject  =  new  BehaviorSubject(false);
 
   register(user: User): Observable<JwtResponse> {  
+
      return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, httpOptions)
      .pipe(
       tap((res:  JwtResponse ) => {
@@ -32,20 +34,29 @@ export class AuthService {
     )
    }
 
-  login(user: User): Observable<JwtResponse> {
+   login(user: User): Observable<JwtResponse> {
     return this.httpClient.post(`${this.AUTH_SERVER}/login`, user).pipe(
       tap(async (res: JwtResponse) => {
         console.log(res);
         if (res.data) {
+
           localStorage.setItem("ACCESS_TOKEN", res.data.token);       
+
           this.authSubject.next(true);
         }
       })
     );
   }
+
+
   isAuthenticated() {
     return  this.authSubject.asObservable();
 }
+ 
+constructor(private httpClient: HttpClient) { }
 
-  constructor(private httpClient: HttpClient) { }
+resend(): Observable<EmailResend>{
+ return this.httpClient.get<EmailResend>(`${this.AUTH_SERVER}/confirmation/verify-email/resend`);
+}
+  
 }

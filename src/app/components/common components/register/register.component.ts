@@ -3,10 +3,10 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
-import { AuthService } from './../auth/auth.service'
-import { User } from './../auth/user';
+import { AuthService } from '../../../services/auth.service'
+import { User } from '../../../models/user';
 import { Router } from '@angular/router';
-import {passValidator} from './confirmpassword';
+import { passValidator} from './confirmpassword';
 
 @Component({
   selector: 'app-register',
