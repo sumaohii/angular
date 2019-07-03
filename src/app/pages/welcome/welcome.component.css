@@ -1,6 +1,6 @@
 /* WELCOME */
 .welcome{
-    min-height: 750px;
+    min-height: 700px;
     /* background: url("./../img/blockchain2.jpg") center center; */
     background-image: 
     /* top, transparent red */
@@ -28,7 +28,8 @@
                     transition: all 300ms ease-in-out;
             position: fixed;
             width: 100%;
-            z-index: 999; }
+            z-index: 999; 
+            background-color: #0a4f52;}
 .fixed {
   position: fixed;
   background-color: #232731;
@@ -37,8 +38,9 @@
 
   /* HEADER */
 header {
-    padding: 20px 0 15px;
-    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+    padding: 15px 0 15px;
+    /* border-bottom: solid 1px rgba(255, 255, 255, 0.2); */
+    
     position: relative;
     width: 1170px;
     margin: 0 auto;

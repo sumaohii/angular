@@ -17,8 +17,7 @@ message: any;
   }
   resentEmail() {
     return this.auth.resend().subscribe((res) => {
-      console.log(res);
-      this.router.navigateByUrl('/profile');
+      console.log(res.message);
     })
   }
 

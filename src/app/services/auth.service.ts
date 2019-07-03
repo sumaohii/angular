@@ -52,8 +52,8 @@ export class AuthService {
   isAuthenticated() {
     return  this.authSubject.asObservable();
 }
-resend() {
-  return this.httpClient.get(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
+resend(): Observable<ResentMessage> {
+  return this.httpClient.get<ResentMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
 }
   constructor(private httpClient: HttpClient) { }
 }
