@@ -7,12 +7,12 @@ import { VerifyemailComponent } from '../components/common components/verifyemai
 import { WelcomeComponent } from '../pages/welcome/welcome.component';
 
 const routes: Routes = [
-  { 
-    path: 'register', 
+  {
+    path: 'register',
     component: RegisterComponent
   },
-  { 
-    path: 'login', 
+  {
+    path: 'login',
     component: LoginComponent
   },
   {
@@ -20,16 +20,17 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
-    path:'verifyemail',
+    path: 'verifyemail',
     component: VerifyemailComponent
   },
   {
-    path:'welcome',
+
+    path: 'welcome',
     component: WelcomeComponent
   },
-  { 
-    path: '', 
-    redirectTo: 'welcome', 
+  {
+    path: '',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
 ]

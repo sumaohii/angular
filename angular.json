@@ -21,12 +21,10 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/icon.ico"
             ],
-            "styles": [
-              "src/styles.css"  
-            ],
-            
+                        
             "scripts": [
             
             ]
@@ -88,9 +86,7 @@
               "src/assets"
             ],
             "styles": [
-
               "src/styles.css"
-
             ],
             "scripts": []
           }
