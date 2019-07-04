@@ -35,9 +35,6 @@
 							<div *ngIf="form.get('password').touched && form.get('password').invalid"
 								class="invalid-feedback">
 								<div *ngIf="form.get('password').errors.required">Password cannot be null</div>
-								<div *ngIf="form.get('password').errors.minlength">Password must be at least 8
-									characters</div>
-
 							</div>
 						</div>
 
@@ -53,7 +50,6 @@
 					</div>
 				
 			</div>
-
 
 
 		</div>

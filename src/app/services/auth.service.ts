@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from  '../models/user';
 import { JwtResponse } from  '../models/jwt-response';
-import {  tap } from  'rxjs/operators';
+import { tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
 import {ResentMessage} from '../models/resent-email'
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -57,4 +58,3 @@ resend(): Observable<ResentMessage> {
 }
   constructor(private httpClient: HttpClient) { }
 }
-

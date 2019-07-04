@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './components/common components/register/register.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './components/common components/login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +16,7 @@ import { AuthService } from './services/auth.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import { AlertComponent } from './components/shared componets/alert/alert.component';
-import { VerifyemailComponent } from './components/common components/verifyemail/verifyemail.component';
+import { VerifyemailComponent } from './pages/verifyemail/verifyemail.component';
 import { WelcomeComponent} from './pages/welcome/welcome.component';
 
 @NgModule({
@@ -27,8 +27,8 @@ import { WelcomeComponent} from './pages/welcome/welcome.component';
     ProfileComponent,
     AlertComponent,
     VerifyemailComponent,
-    WelcomeComponent,
- 
+    WelcomeComponent
+
   ],
   imports: [
     BrowserModule,

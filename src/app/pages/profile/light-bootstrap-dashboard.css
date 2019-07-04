@@ -246,6 +246,12 @@ input:focus {
     font-weight: 200;
     background-size: cover;
     background-position: center center;
+    background-image:    
+    linear-gradient(
+        rgba(26, 28, 29, 0.45),
+        rgba(26, 28, 29, 0.45)
+    ),
+    url("D:\Ngan\project1\frontend\angular\src\app\pages\img\side1.jpg"); 
 }
 
 .sidebar .sidebar-wrapper {
@@ -257,6 +263,13 @@ input:focus {
     z-index: 4;
     padding-bottom: 100px;
 }
+.sidebar .resize{
+    max-width: 90%;
+    height:auto;
+    margin-left:5px;
+    margin-top: 10px;
+      }
+
 
 .sidebar .sidebar-background {
     position: absolute;
@@ -311,7 +324,7 @@ input:focus {
 }
 
 .sidebar .nav {
-    margin-top: 20px;
+    margin-top: 40px;
     float: none;
 }
 
@@ -348,10 +361,10 @@ input:focus {
 .sidebar .nav p {
     margin: 0;
     line-height: 30px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-left: 45px;
+    margin-left:30px;
 }
 
 .sidebar .nav i {
@@ -422,17 +435,17 @@ input:focus {
 
 .sidebar:before {
     opacity: .33;
-    background: #000000;
+    background: #837676;
 }
 
 .sidebar:after {
-    background: #787878;
-    background: -moz-linear-gradient(top, #787878 0%, #343434 100%);
+    /* background: #787878; */
+    /* background: -moz-linear-gradient(top, #787878 0%, #000000 100%); 
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #787878), color-stop(100%, #343434));
-    background: -webkit-linear-gradient(top, #787878 0%, #343434 100%);
-    background: -o-linear-gradient(top, #787878 0%, #343434 100%);
-    background: -ms-linear-gradient(top, #787878 0%, #343434 100%);
-    background: linear-gradient(to bottom, #787878 0%, #343434 100%);
+    background: -webkit-linear-gradient(top, #787878 0%, #000000 100%);
+    background: -o-linear-gradient(top, #787878 0%, #000000 100%);
+    background: -ms-linear-gradient(top, #787878 0%, #000000 100%);
+    background: linear-gradient(to bottom, #787878 0%, #000000 100%); */
     background-size: 150% 150%;
     z-index: 3;
     opacity: 1;

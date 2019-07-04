@@ -1,10 +1,11 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegisterComponent } from '../components/common components/register/register.component';
-import { LoginComponent } from '../components/common components/login/login.component';
+import { RegisterComponent } from '../pages/register/register.component';
+import { LoginComponent } from '../pages/login/login.component';
 import { ProfileComponent } from '../pages/profile/profile.component';
-import { VerifyemailComponent } from '../components/common components/verifyemail/verifyemail.component';
+import { VerifyemailComponent } from '../pages/verifyemail/verifyemail.component';
 import { WelcomeComponent } from '../pages/welcome/welcome.component';
+
 const routes: Routes = [
   {
     path: 'register',
@@ -19,6 +20,7 @@ const routes: Routes = [
     component: VerifyemailComponent
   },
   {
+
     path: 'welcome',
     component: WelcomeComponent
   },
