@@ -3773,9 +3773,9 @@ fieldset[disabled] .btn-neutral.active {
     .dropdown-menu {
         display: none;
     }
-    .navbar-fixed-top {
+    /* .navbar-fixed-top {
         -webkit-backface-visibility: hidden;
-    }
+    } */
     #bodyClick {
         height: 100%;
         width: calc(100% - 260px);
