@@ -6,6 +6,7 @@ import { ProfileComponent } from '../components/common components/profile/profil
 import { VerifyemailComponent } from '../components/common components/verifyemail/verifyemail.component';
 import { WelcomeComponent } from '../pages/welcome/welcome.component';
 import { ForgotpasswordComponent } from '../components/common components/forgotpassword/forgotpassword.component';
+import { Forgotpasswordstep2Component } from '../components/common components/forgotpasswordstep2/forgotpasswordstep2.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'forgotpassword',
     component: ForgotpasswordComponent
+  },
+  {
+    path: 'forgotpasswordstep2',
+    component: Forgotpasswordstep2Component
   },
   {
     path: '',

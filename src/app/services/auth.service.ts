@@ -25,8 +25,6 @@ export class AuthService {
 
   register(user: User): Observable<JwtResponse> {  
 
-
-
      return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, httpOptions)
      .pipe(
       tap((res:  JwtResponse ) => {
@@ -56,17 +54,17 @@ export class AuthService {
   }
 
   code(email: Email):Observable<ResentMessage> {
-    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,httpOptions);
+    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/user/forgotpassword`,httpOptions);
   }
 
 
   isAuthenticated() {
     return  this.authSubject.asObservable();
-}
+  }
 
-resend(): Observable<ResentMessage> {
+  resend(): Observable<ResentMessage> {
   return this.httpClient.get<ResentMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
-}
+  }
   
 }
 
