@@ -13,11 +13,12 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule} from '@angular/common';
 import { AuthService } from './services/auth.service';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ToastrModule} from 'ngx-toastr';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule} from 'ngx-toastr';
 import { AlertComponent } from './components/shared componets/alert/alert.component';
 import { VerifyemailComponent } from './components/common components/verifyemail/verifyemail.component';
 import { WelcomeComponent} from './pages/welcome/welcome.component';
+import { ForgotpasswordComponent } from './components/common components/forgotpassword/forgotpassword.component'
 
 @NgModule({
   declarations: [
@@ -27,8 +28,8 @@ import { WelcomeComponent} from './pages/welcome/welcome.component';
     ProfileComponent,
     AlertComponent,
     VerifyemailComponent,
-
-    WelcomeComponent
+    WelcomeComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,

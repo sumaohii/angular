@@ -47,7 +47,7 @@
   /* HEADER */
 
 header {
-    padding: 20px 0 15px;
+    padding: 15px 0 px;
     
     position: relative;
     width: 1170px;
@@ -63,19 +63,22 @@ header a {
 header img {
         max-width: 15%;
         height:auto;
+        margin-top:5px;
       }
 header a.login {
         margin-right: 20px; }
 header .logo {
       display: inline-block; }
 header ul.primary-nav {
-      margin: 10 0 0 0px;
+      margin: 1 0 0 0px;
       padding: 0; }
 header ul.primary-nav li {
         display: inline; }
 header ul.primary-nav li a {
           color: #fff;
-          padding-right: 25px; }
+          padding-right: 25px; 
+          margin-top: 2px;  
+        }
 header ul.primary-nav li a:hover {
             color: rgb(82, 229, 255); }
 header ul.primary-nav li:last-child a {
@@ -91,7 +94,7 @@ header .header-nav {
 header .member-actions {
       position: absolute;
       right: 0;
-      top: 23px;
+      top: 10px;
       -webkit-transition: all 300ms ease-in-out;
               transition: all 300ms ease-in-out; }
 
@@ -242,7 +245,7 @@ header .member-actions {
   
   .btn-small {
 
-    padding: 6px 25px; }
+    padding: 4px 14px; }
   
   .btn-large {
     padding: 12px 25px; }

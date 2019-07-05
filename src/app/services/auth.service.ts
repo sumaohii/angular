@@ -4,7 +4,8 @@ import { User } from  '../models/user';
 import { JwtResponse } from  '../models/jwt-response';
 import { tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
-import {ResentMessage} from '../models/resent-email'
+import { ResentMessage} from '../models/resent-email'
+import { Email } from '../models/email';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,7 +20,12 @@ export class AuthService {
 
   authSubject  =  new  BehaviorSubject(false);
 
+  constructor(private httpClient: HttpClient) { }
+
+
   register(user: User): Observable<JwtResponse> {  
+
+
 
      return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, httpOptions)
      .pipe(
@@ -49,6 +55,10 @@ export class AuthService {
     );
   }
 
+  code(email: Email):Observable<ResentMessage> {
+    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,httpOptions);
+  }
+
 
   isAuthenticated() {
     return  this.authSubject.asObservable();
@@ -57,5 +67,6 @@ export class AuthService {
 resend(): Observable<ResentMessage> {
   return this.httpClient.get<ResentMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
 }
-  constructor(private httpClient: HttpClient) { }
+  
 }
+

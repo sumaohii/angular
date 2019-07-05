@@ -5,6 +5,7 @@ import { LoginComponent } from '../components/common components/login/login.comp
 import { ProfileComponent } from '../components/common components/profile/profile.component';
 import { VerifyemailComponent } from '../components/common components/verifyemail/verifyemail.component';
 import { WelcomeComponent } from '../pages/welcome/welcome.component';
+import { ForgotpasswordComponent } from '../components/common components/forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
   {
@@ -24,13 +25,16 @@ const routes: Routes = [
     component: VerifyemailComponent
   },
   {
-
     path: 'welcome',
     component: WelcomeComponent
   },
   {
+    path: 'forgotpassword',
+    component: ForgotpasswordComponent
+  },
+  {
     path: '',
-    redirectTo: 'welcome',
+    redirectTo: 'forgotpassword',
     pathMatch: 'full'
   },
 ]
