@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
 import { AppRoutingModule } from './routing/app-routing.module';
-import { AppComponent } from './app general/app.component';
-import { RegisterComponent } from './components/common components/register/register.component';
+import { AppComponent } from './app.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './components/common components/login/login.component';
-import { ProfileComponent } from './components/common components/profile/profile.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
@@ -16,10 +16,10 @@ import { AuthService } from './services/auth.service';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToastrModule} from 'ngx-toastr';
 import { AlertComponent } from './components/shared componets/alert/alert.component';
-import { VerifyemailComponent } from './components/common components/verifyemail/verifyemail.component';
+import { VerifyemailComponent } from './pages/verifyemail/verifyemail.component';
 import { WelcomeComponent} from './pages/welcome/welcome.component';
-import { ForgotpasswordComponent } from './components/common components/forgotpassword/forgotpassword.component';
-import { Forgotpasswordstep2Component } from './components/common components/forgotpasswordstep2/forgotpasswordstep2.component'
+import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component'
+import { Forgotpasswordstep2Component } from './pages/forgotpasswordstep2/forgotpasswordstep2.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +31,10 @@ import { Forgotpasswordstep2Component } from './components/common components/for
     VerifyemailComponent,
     WelcomeComponent,
     ForgotpasswordComponent,
-    Forgotpasswordstep2Component
+    Forgotpasswordstep2Component,
+    WelcomeComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { Forgotpasswordstep2Component } from './components/common components/for
 
   
   ],
+  exports: [RouterModule],
   providers: [RegisterComponent,VerifyemailComponent],
   bootstrap: [AppComponent]
 })

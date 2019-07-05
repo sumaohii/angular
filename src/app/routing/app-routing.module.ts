@@ -1,12 +1,12 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegisterComponent } from '../components/common components/register/register.component';
-import { LoginComponent } from '../components/common components/login/login.component';
-import { ProfileComponent } from '../components/common components/profile/profile.component';
-import { VerifyemailComponent } from '../components/common components/verifyemail/verifyemail.component';
+import { RegisterComponent } from '../pages/register/register.component';
+import { LoginComponent } from '../pages/login/login.component';
+import { ProfileComponent } from '../pages/profile/profile.component';
+import { VerifyemailComponent } from '../pages/verifyemail/verifyemail.component';
 import { WelcomeComponent } from '../pages/welcome/welcome.component';
-import { ForgotpasswordComponent } from '../components/common components/forgotpassword/forgotpassword.component';
-import { Forgotpasswordstep2Component } from '../components/common components/forgotpasswordstep2/forgotpasswordstep2.component';
+import { ForgotpasswordComponent } from '../pages/forgotpassword/forgotpassword.component'
+import { Forgotpasswordstep2Component } from '../pages/forgotpasswordstep2/forgotpasswordstep2.component'
 
 const routes: Routes = [
   {
@@ -16,10 +16,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
   },
   {
     path: 'verifyemail',
@@ -38,8 +34,12 @@ const routes: Routes = [
     component: Forgotpasswordstep2Component
   },
   {
+    path: 'user-profile',
+    component: ProfileComponent
+  },
+  {
     path: '',
-    redirectTo: 'forgotpassword',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
 ]
