@@ -5,14 +5,14 @@
 	<div class="row">
 		<div class="col-md-6 offset-md-3 mt-5 p-5">
 			<div class="col-md-12">
-					
-						<alert></alert>
-			
-					<!-- Login text -->
-					<div class="form-group">
-						<h2 class="text-center">Login</h2>
-					</div>
-					<form name="form" [formGroup]="form" #myform ="ngForm" (ngSubmit)="login(myform)">
+
+				<alert></alert>
+
+				<!-- Login text -->
+				<div class="form-group">
+					<h2 class="text-center">Login</h2>
+				</div>
+				<form name="form" [formGroup]="form" #myform="ngForm" (ngSubmit)="login(myform)">
 					<!-- Input Username section-->
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">Username</label>
@@ -40,21 +40,21 @@
 
 					</div>
 					<div class="col-md-12">
-						<button type="submit"
-							class="col-md-4 offset-md-4 btn btn-outline-secondary btn-md btn-block a"
+						<button type="submit" class="col-md-4 offset-md-4 btn btn-outline-secondary btn-md btn-block a"
 							[disabled]='!form.valid'>Login</button>
 					</div>
 				</form>
+				<div class="bc">
 					<div class="col-md-8 offset-md-4 alert">
 						Not have account yet? <a routerLink="/register" class="alert-link">Create one</a>
 					</div>
-				
+
+					<div class="col-md-7 offset-md-1">
+						<a routerLink="/register" class="alert-link"> Forget password </a>
+					</div>
+				</div>
 			</div>
-
-
 		</div>
-
-
 	</div>
 
 </div>

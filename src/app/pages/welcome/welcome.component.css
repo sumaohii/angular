@@ -53,6 +53,7 @@ header {
   margin: 0 auto;
   -webkit-transition: padding 300ms ease-in-out;
           transition: padding 300ms ease-in-out; }
+
 header a {
     color: #fff;
     text-transform: uppercase;
@@ -60,24 +61,30 @@ header a {
     font-size: 15px; }
 
 header img {
+
       max-width: 15%;
       height:auto;
       margin-top:5px;
     }
+
 header a.login {
       margin-right: 20px; }
 header .logo {
     display: inline-block; }
 header ul.primary-nav {
+
     margin: 1 0 0 0px;
     padding: 0; }
+
 header ul.primary-nav li {
       display: inline; }
 header ul.primary-nav li a {
+
         color: #fff;
         padding-right: 25px; 
         margin-top: 2px;  
       }
+
 header ul.primary-nav li a:hover {
           color: rgb(82, 229, 255); }
 header ul.primary-nav li:last-child a {
@@ -91,11 +98,13 @@ header ul.member-actions li a:hover {
 header .header-nav {
     display: inline-block; }
 header .member-actions {
+
     position: absolute;
     right: 0;
     top: 10px;
     -webkit-transition: all 300ms ease-in-out;
             transition: all 300ms ease-in-out; }
+
 
 
 /* NAVIGATION */
@@ -185,10 +194,12 @@ p {
 h1 {
   font-size: 60px; }
 
+
 h2 {
   font-size: 40px;
   font-weight: 300;
   color: #3D4351; }
+
 
 h3 {
   font-size: 24px;
