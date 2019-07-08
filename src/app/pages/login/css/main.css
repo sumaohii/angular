@@ -45,7 +45,7 @@ body, html {
 /*---------------------------------------------*/
 a {
 	font-family: Poppins-Regular;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.7;
 	/* color: #666666; */
 	margin: 0px;
@@ -233,10 +233,9 @@ iframe {
   font-size: 15px;
   color: #333333;
   line-height: 1.2;
-
   display: block;
   width: 100%;
-  height: 50px;
+  height: 35px;
   background: transparent;
   padding: 0 7px 0 43px;
 }
@@ -271,7 +270,7 @@ iframe {
   bottom: 0;
   left: 0;
   padding-left: 13px;
-  padding-top: 15px;
+  padding-top: 8px;
 }
 
 .focus-input100::before {

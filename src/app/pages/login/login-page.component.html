@@ -3,13 +3,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<form name="form" [formGroup]="form" #myform="ngForm" (ngSubmit)="login(myform)">
+<body>
 	<div class="limiter">
 		<div class="container-login100">
-				
+			<alert></alert>
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-					<alert></alert>
-				<form class="login100-form" name="form" [formGroup]="form" #myform ="ngForm" (ngSubmit)="login(myform)">
+				<form class="login100-form validate-input" name="form"[formGroup]="form" #myform ="ngForm" (ngSubmit)="login(myform)">
 					<span class="login100-form-title p-b-49">
 						Login
 					</span>
@@ -17,35 +16,37 @@
 					<div class="wrap-input100 m-b-15">
 						<span class="label-input100">Username</span>
 						<input class="form-control input100" type="text" formControlName="username" [ngClass]="{'is-invalid' : form.get('username').touched && form.get('username').invalid}"placeholder="Type your username" style="border: 0px"/>
-						<span class="focus-input100" data-symbol="&#xf206;"></span>	
+			
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
 						<div class="invalid-feedback">
-								<div>Username cannot be null</div>
-							</div>	
-							
-						
+							<div>Username cannot be null</div>
+						</div>						
+
 					</div>
 					
 					<div class="wrap-input100 m-b-15">
 						<span class="label-input100">Password</span>
 						
 						<input class="form-control input100" type="password" formControlName="password" [ngClass]="{'is-invalid' : form.get('password').touched && form.get('password').invalid}"placeholder="Type your password" style="border: 0px" />
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
 						<div class="invalid-feedback">
 							<div>Password cannot be null</div>
 						</div>
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					
 						
 					</div>
 					
 					<div class="text-right p-t-10 p-b-31">
+
 						<a routerLink="/forgotpassword">
 							Forgot password?
 						</a>
 					</div>
 					
-					<div class="container-login100-form-btn">
+					<div class="container-login100-form-btn p-t-30">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn alert-link" [disabled]='!form.valid'>
+							<button class="login100-form-btn">
 								Login
 							</button>
 						</div>
@@ -84,7 +85,6 @@
 			</div>
 		</div>
 	</div>
-</form>
 
 	<div id="dropDownSelect1"></div>
 	
