@@ -16,7 +16,7 @@ const httpOptions = {
 export class AuthService {
 
    
-  AUTH_SERVER = "/web-api";
+  AUTH_SERVER = "/web-api/user";
 
   authSubject  =  new  BehaviorSubject(false);
 
