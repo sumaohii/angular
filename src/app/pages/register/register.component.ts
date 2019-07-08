@@ -10,8 +10,8 @@ import { passValidator} from './confirmpassword';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: './register-page.component.html',
+  styleUrls: ['./register.component.css', './../login/css/main.css','./../login/css/util.css' ]
 })
 export class RegisterComponent implements OnInit {
 
