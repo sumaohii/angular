@@ -186,7 +186,7 @@ iframe {
    url("./../../img/blockchain2.jpg");
 }
 .wrap-login100 {
-  width: 500px;
+  width: 450px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -339,11 +339,11 @@ iframe {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #0a4f52;
-  background: -webkit-linear-gradient(to left, #00dbde, #75268d, #00dbde, #75268d);
-  background: -o-linear-gradient(to left, #00dbde, #75268d, #00dbde, #75268d);
-  background: -moz-linear-gradient(to left, #00dbde, #75268d, #00dbde, #75268d);
-  background: linear-gradient(to left, #00dbde, #75268d, #00dbde, #75268d);
+  background: #278d92;
+  background: -webkit-linear-gradient(to left, #00dbde, #024e4e, #00dbde, #024e4e);
+  background: -o-linear-gradient(to left, #00dbde, #024e4e, #00dbde, #024e4e);
+  background: -moz-linear-gradient(to left, #00dbde, #024e4e, #00dbde, #024e4e);
+  background: linear-gradient(to left, #00dbde, #024e4e, #00dbde, #024e4e);
   top: 0;
   left: -100%;
 
