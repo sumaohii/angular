@@ -270,7 +270,7 @@ iframe {
   bottom: 0;
   left: 0;
   padding-left: 13px;
-  padding-top: 8px;
+  padding-top: 11px;
 }
 
 .focus-input100::before {
@@ -477,4 +477,7 @@ iframe {
     padding-left: 15px;
     padding-right: 15px;
   }
+} 
+.feedback {
+  font-family: segoe ui;
 } 
