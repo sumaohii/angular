@@ -20,7 +20,8 @@ import { VerifyemailComponent } from './pages/verifyemail/verifyemail.component'
 import { WelcomeComponent} from './pages/welcome/welcome.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component'
 import { Forgotpasswordstep2Component } from './pages/forgotpasswordstep2/forgotpasswordstep2.component'
-
+import { FooterComponent } from './pages/footer/footer.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +33,9 @@ import { Forgotpasswordstep2Component } from './pages/forgotpasswordstep2/forgot
     WelcomeComponent,
     ForgotpasswordComponent,
     Forgotpasswordstep2Component,
-    WelcomeComponent
-
-
+    WelcomeComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
