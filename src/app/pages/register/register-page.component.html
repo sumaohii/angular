@@ -1,4 +1,3 @@
-
 	<title>Sign up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,14 +48,14 @@
 
 
 					</div>
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
+					<div class="wrap-input100">
 						<span class="label-input100">Confirm Password</span>
 						<input type="password" class="form-control input100" formControlName="confirmpassword"
 							[ngClass]="{'is-invalid' : form.get('confirmpassword').touched && form.get('confirmpassword').invalid}"
 							placeholder="*match above password" style="border: 0px;" />
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 						<div *ngIf="form.get('confirmpassword').touched && form.get('confirmpassword').invalid"
-							class="invalid-feedback ">
+							class="invalid-feedback a">
 							<div *ngIf="form.get('confirmpassword').errors.required">Incorrect</div>
 						</div>
 					</div>
