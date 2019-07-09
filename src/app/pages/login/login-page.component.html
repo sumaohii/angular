@@ -2,17 +2,16 @@
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<body>
 	<div class="limiter">
 		<div class="container-login100">
-			<alert></alert>
+		
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 				<form class="login100-form validate-input" name="form"[formGroup]="form" #myform ="ngForm" (ngSubmit)="login(myform)">
 					<span class="login100-form-title p-b-49">
 						Login
 					</span>
 					
+
 					<div class="wrap-input100 m-b-15">
 						<span class="label-input100">Username</span>
 						<input class="form-control input100" type="text" formControlName="username" [ngClass]="{'is-invalid' : form.get('username').touched && form.get('username').invalid}"placeholder="Type your username" style="border: 0px"/>
