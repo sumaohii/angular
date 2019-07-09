@@ -16,7 +16,7 @@ const httpOptions = {
 export class AuthService {
 
    
-  AUTH_SERVER = "/web-api";
+  AUTH_SERVER = "/web-api/user";
 
   authSubject  =  new  BehaviorSubject(false);
 
@@ -54,7 +54,7 @@ export class AuthService {
   }
 
   code(email: Email):Observable<ResentMessage> {
-    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/user/forgotpassword`,httpOptions);
+    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,httpOptions);
   }
 
 
