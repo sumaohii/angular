@@ -19,9 +19,10 @@ export class ForgotpasswordComponent implements OnInit {
   ngOnInit() {
   }
 
-  codeEmail(form1)
+  codeEmail(form)
   {
-    return this.auth.code(form1.value).subscribe((res) => {
+    console.log(form.value);
+    return this.auth.code(form.email).subscribe((res) => {
       console.log(res.message);
     })
   }
