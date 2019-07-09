@@ -45,7 +45,7 @@
 					<div class="container-login100-form-btn p-t-30">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" [disabled]='!form.valid'>
 								Login
 							</button>
 						</div>
@@ -84,6 +84,7 @@
 			</div>
 		</div>
 	</div>
+
 
 	<div id="dropDownSelect1"></div>
 	

@@ -54,7 +54,7 @@ export class AuthService {
   }
 
   code(email: Email):Observable<ResentMessage> {
-    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/user/forgotpassword`,httpOptions);
+    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,httpOptions);
   }
 
 
