@@ -3,11 +3,11 @@ import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service'
 import { User } from '../../models/user';
-import {AlertService} from '../../components/shared componets/alert/alert.service';
+import {AlertService} from '../../components/alert/alert.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login.component.css', './css/main.css', './css/util.css', './../footer/footer.component.css']
+  styleUrls: ['./login.component.css', './css/main.css', './css/util.css']
 })
 export class LoginComponent implements OnInit {
   form = new FormGroup ({  
@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
     this.authService.login(form.value).subscribe(
       (res)=>{
         if (res.data) {
-      console.log("Logged in!");
-      this.alertService.success(res.message);
-      this.router.navigateByUrl('/user-profile');}
+      console.log("Logged in! ");
+      this.alertService.success(res.message+" Redirecting...");
+      setTimeout(() => {this.router.navigateByUrl('/user-profile');}, 3000);}
     else {
         console.log ("Could not authenticate");
         this.alertService.error(res.message);}

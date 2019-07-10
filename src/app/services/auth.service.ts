@@ -52,21 +52,17 @@ export class AuthService {
     );
   }
 
-  code(email: Email):Observable<ResentMessage> {
-   
-    return this.httpClient.post(`${this.AUTH_SERVER}/forgotpassword`,email, httpOptions).pipe(
+code(e: Email):Observable<ResentMessage> {
+    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,e).pipe(
       tap(async (res: ResentMessage) => {
-        console.log(email);
-        console.log(res);
-        if (res.message) {
           this.authSubject.next(true);
-        }
+        
       })
     );;
   }
 
 
-  isAuthenticated() {
+isAuthenticated() {
     return  this.authSubject.asObservable();
 
 }

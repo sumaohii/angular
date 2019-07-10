@@ -7,14 +7,14 @@ import { AuthService } from '../../services/auth.service'
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
 import { passValidator} from './confirmpassword';
-
+import {AlertService} from '../../components/alert/alert.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register-page.component.html',
   styleUrls: ['./register.component.css', './../login/css/main.css','./../login/css/util.css' ]
 })
 export class RegisterComponent implements OnInit {
-  message:any;
+
     form = new FormGroup ({  
     username: new FormControl('',Validators.required),
     password: new FormControl('',[Validators.required, Validators.minLength(8)]),
@@ -22,28 +22,24 @@ export class RegisterComponent implements OnInit {
     confirmpassword: new FormControl('',[Validators.required,passValidator])
     
   }) 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private alertService: AlertService) { }
   ngOnInit() {}
 
  register(form) {
   console.log(form.value);
     this.authService.register(form.value).subscribe(
-      (res) => { this.message=res.message;
-        if (res.status==1) {console.log(this.message);
-        this.router.navigateByUrl('/verifyemail'); }},
-
-     (err) => {console.log("Username or password is already taken!")})
-
-      // if (res.status==1)
-      // {
-      // // console.log(res.message);
-      // this.router.navigateByUrl('/verifyemail');
-      // }
-      // else if (res.status==0) console.log(res.message);
-      
-    
-  }
+      (res) => {
+        if (res.status==1) {
+            console.log(res.message);
+            this.alertService.success(res.message +" Redirecting...");
+            setTimeout(() => {this.router.navigateByUrl('/verifyemail');},3000); 
+          }
+        else if (res.status==0) { console.log(res.message);
+          this.alertService.error(res.message)
+        }    
+     
+  })
   
   }
-  
+}
   

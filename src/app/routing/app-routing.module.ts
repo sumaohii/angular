@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'forgotpasswordstep2',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
 ]

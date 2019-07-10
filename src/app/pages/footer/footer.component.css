@@ -325,12 +325,12 @@
       margin-bottom: 10px;
       padding-bottom: 0;
     }
-    /* footer .social-share a.brand{
+    footer .social-share a.brand{
       margin-right: 30px;
-    } */
-    /* footer .social-share a.brand:hover, footer .social-share a.brand:focus{
+    }
+    footer .social-share a.brand:hover, footer .social-share a.brand:focus{
       background-color: rgb(42, 128, 143); 
-    } */
+    }
     footer .social-share a {
       color: #fff; }
     footer .social-share a:hover {

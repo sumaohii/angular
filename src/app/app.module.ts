@@ -15,7 +15,7 @@ import { CommonModule} from '@angular/common';
 import { AuthService } from './services/auth.service';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToastrModule} from 'ngx-toastr';
-import { AlertComponent } from './components/shared componets/alert/alert.component';
+import { AlertComponent } from './components/alert/alert.component';
 import { VerifyemailComponent } from './pages/verifyemail/verifyemail.component';
 import { WelcomeComponent} from './pages/welcome/welcome.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component'
