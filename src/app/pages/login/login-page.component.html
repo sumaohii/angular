@@ -5,6 +5,7 @@
 	<form name="form" [formGroup]="form" #myform="ngForm" (ngSubmit)="login(myform)">
 	<div class="limiter">
 		<div class="container-login100">
+
 		
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-40 p-b-15" style="height:90%;">
 				<form class="login100-form validate-input" name="form"[formGroup]="form" #myform ="ngForm" (ngSubmit)="login(myform)">
@@ -18,7 +19,7 @@
 						<input class="form-control input100" type="text" formControlName="username" [ngClass]="{'is-invalid' : form.get('username').touched && form.get('username').invalid}"placeholder="Type your username" style="border: 0px"/>
 			
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
-						<div class="invalid-feedback">
+						<div class="invalid-feedback feedback">
 							<div>Username cannot be null</div>
 						</div>						
 
@@ -29,7 +30,7 @@
 						
 						<input class="form-control input100" type="password" formControlName="password" [ngClass]="{'is-invalid' : form.get('password').touched && form.get('password').invalid}"placeholder="Type your password" style="border: 0px" />
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
-						<div class="invalid-feedback">
+						<div class="invalid-feedback feedback">
 							<div>Password cannot be null</div>
 						</div>
 					

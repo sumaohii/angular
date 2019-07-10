@@ -186,10 +186,12 @@ iframe {
    url("./../../img/blockchain2.jpg");
 }
 .wrap-login100 {
+
   width: 450px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
+  
 }
 
 
@@ -477,4 +479,7 @@ iframe {
     padding-left: 15px;
     padding-right: 15px;
   }
+} 
+.feedback {
+  font-family: segoe ui;
 } 
