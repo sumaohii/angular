@@ -69,7 +69,7 @@ export class AuthService {
     return  this.authSubject.asObservable();
 
 }
-resend(): Observable<ResentMessage> {
+  resend(): Observable<ResentMessage> {
 
   return this.httpClient.get<ResentMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
   }
