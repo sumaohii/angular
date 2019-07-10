@@ -54,8 +54,10 @@ export class AuthService {
   }
 
   code(email: Email):Observable<ResentMessage> {
-    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,email, httpOptions).pipe(
+   
+    return this.httpClient.post(`${this.AUTH_SERVER}/forgotpassword`,email, httpOptions).pipe(
       tap(async (res: ResentMessage) => {
+        console.log(email);
         console.log(res);
         if (res.message) {
           this.authSubject.next(true);
