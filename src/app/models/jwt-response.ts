@@ -1,5 +1,5 @@
 export interface JwtResponse {
-    statusCode: number;
+    status: number;
     message: string;
     data: {
         username: string,

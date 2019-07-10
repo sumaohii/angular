@@ -14,7 +14,7 @@ import { passValidator} from './confirmpassword';
   styleUrls: ['./register.component.css', './../login/css/main.css','./../login/css/util.css' ]
 })
 export class RegisterComponent implements OnInit {
-
+  message:any;
     form = new FormGroup ({  
     username: new FormControl('',Validators.required),
     password: new FormControl('',[Validators.required, Validators.minLength(8)]),
@@ -27,10 +27,21 @@ export class RegisterComponent implements OnInit {
 
  register(form) {
   console.log(form.value);
-    this.authService.register(form.value).subscribe((res) => {
-      this.router.navigateByUrl('/verifyemail');
+    this.authService.register(form.value).subscribe(
+      (res) => { this.message=res.message;
+        if (res.status==1) {console.log(this.message);
+        this.router.navigateByUrl('/verifyemail'); }},
+
+     (err) => {console.log("Username or password is already taken!")})
+
+      // if (res.status==1)
+      // {
+      // // console.log(res.message);
+      // this.router.navigateByUrl('/verifyemail');
+      // }
+      // else if (res.status==0) console.log(res.message);
       
-    });
+    
   }
   
   }

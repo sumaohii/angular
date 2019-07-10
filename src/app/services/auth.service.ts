@@ -29,10 +29,9 @@ export class AuthService {
      .pipe(
       tap((res:  JwtResponse ) => {
  
-         if (res.statusCode==1) {
+         if (res.status==1) {
            console.log(res);
            localStorage.setItem("email_message", res.todo.verifyEmail);
-           // localStorage.set("EXPIRES_IN", res.user.expires_in);
            this.authSubject.next(true);
          }
       })
