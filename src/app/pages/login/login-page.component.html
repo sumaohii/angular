@@ -3,8 +3,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<form name="form" [formGroup]="form" #myform="ngForm" (ngSubmit)="login(myform)">
+	
 	<div class="limiter">
-		<div class="container-login100">
+		<app-navbar></app-navbar>
+		<div class="container-login100" style="padding-top:75px;">
 
 		
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-40 p-b-15" style="height:90%;">
@@ -87,3 +89,4 @@
 		</div>
 	</div>
 	
+<app-footer></app-footer>
