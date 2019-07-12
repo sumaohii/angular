@@ -58,18 +58,17 @@ code(e: Email):Observable<ResentMessage> {
           this.authSubject.next(true);
         
       })
-    );;
+    );
   }
 
   codeChangePassword(f : ForgotPassword):Observable<ResentMessage> {
-    return this.httpClient.put<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f).pipe(
+    return this.httpClient.put<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f,httpOptions).pipe(
       tap(async (res: ResentMessage) => {
-        console.log(f);
-        console.log(res.status+"\n"+res.message);
-         this.authSubject.next(true);
+          console.log (res.status +"\n"+ res.message);
+              this.authSubject.next(true);
         
       })
-    );;
+    );
   }
 isAuthenticated() {
     return  this.authSubject.asObservable();
