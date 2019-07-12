@@ -6,7 +6,7 @@ import { tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
 import { ResentMessage} from '../models/resent-email'
 import { Email } from '../models/email';
-
+import {ForgotPassword} from '../models/forgotpassword';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -52,8 +52,8 @@ export class AuthService {
     );
   }
 
-  code(e: Email):Observable<ResentMessage> {
-    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,e).pipe(
+code(e: Email):Observable<ResentMessage> {
+    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,e, httpOptions).pipe(
       tap(async (res: ResentMessage) => {
           this.authSubject.next(true);
         
@@ -62,7 +62,18 @@ export class AuthService {
   }
 
 
-  isAuthenticated() {
+  codeChangePassword(f : ForgotPassword):Observable<ResentMessage> {
+    return this.httpClient.put<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f).pipe(
+      tap(async (res: ResentMessage) => {
+        console.log(f);
+        console.log(res.status+"\n"+res.message);
+        //  this.authSubject.next(true);
+        
+      })
+    );;
+  }
+isAuthenticated() {
+
     return  this.authSubject.asObservable();
 
   }

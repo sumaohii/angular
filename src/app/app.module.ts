@@ -22,7 +22,8 @@ import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.c
 import { Forgotpasswordstep2Component } from './pages/forgotpasswordstep2/forgotpasswordstep2.component'
 import { FooterComponent } from './pages/footer/footer.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
-import { LinkEmailComponent } from './pages/link-email/link-email.component';
+import { KycComponent } from './pages/kyc/kyc.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import { LinkEmailComponent } from './pages/link-email/link-email.component';
     WelcomeComponent,
     FooterComponent,
     NavbarComponent,
-    LinkEmailComponent
+    KycComponent
   ],
   imports: [
     BrowserModule,
