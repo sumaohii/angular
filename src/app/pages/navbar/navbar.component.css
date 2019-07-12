@@ -1,4 +1,5 @@
 
+
 /* WELCOME */
 .welcome{
     /* min-height: 750px; */
@@ -147,6 +148,11 @@
   .nav-toggle span:before {
     top: -10px
   }
+
+  .login{
+    text-decoration: none;
+  }
+
   .nav-toggle span:after {
     bottom: -10px
   }
