@@ -8,6 +8,7 @@ import { WelcomeComponent } from '../pages/welcome/welcome.component';
 import { ForgotpasswordComponent } from '../pages/forgotpassword/forgotpassword.component'
 import { Forgotpasswordstep2Component } from '../pages/forgotpasswordstep2/forgotpasswordstep2.component'
 import { FooterComponent } from '../pages/footer/footer.component';
+import {KycComponent} from '../pages/kyc/kyc.component'
 const routes: Routes = [
   {
     path: 'register',
@@ -37,6 +38,11 @@ const routes: Routes = [
     path: 'user-profile',
     component: ProfileComponent
   },
+  {
+    path: 'kyc',
+    component: KycComponent
+  },
+  
   {
     path: '',
     redirectTo: 'welcome',
