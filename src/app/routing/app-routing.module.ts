@@ -8,6 +8,8 @@ import { WelcomeComponent } from '../pages/welcome/welcome.component';
 import { ForgotpasswordComponent } from '../pages/forgotpassword/forgotpassword.component'
 import { Forgotpasswordstep2Component } from '../pages/forgotpasswordstep2/forgotpasswordstep2.component'
 import { FooterComponent } from '../pages/footer/footer.component';
+import { LinkEmailComponent } from '../pages/link-email/link-email.component';
+
 const routes: Routes = [
   {
     path: 'register',
@@ -38,8 +40,12 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
+    path:'link-email',
+    component: LinkEmailComponent
+  },
+  {
     path: '',
-    redirectTo: 'forgotpasswordstep2',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
 ]

@@ -29,10 +29,9 @@ export class AuthService {
      .pipe(
       tap((res:  JwtResponse ) => {
  
-         if (res.statusCode==1) {
+         if (res.status==1) {
            console.log(res);
            localStorage.setItem("email_message", res.todo.verifyEmail);
-           // localStorage.set("EXPIRES_IN", res.user.expires_in);
            this.authSubject.next(true);
          }
       })
@@ -53,13 +52,11 @@ export class AuthService {
     );
   }
 
-  code(email: Email):Observable<ResentMessage> {
-    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,email, httpOptions).pipe(
+  code(e: Email):Observable<ResentMessage> {
+    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,e).pipe(
       tap(async (res: ResentMessage) => {
-        console.log(res);
-        if (res.message) {
           this.authSubject.next(true);
-        }
+        
       })
     );;
   }
@@ -68,11 +65,18 @@ export class AuthService {
   isAuthenticated() {
     return  this.authSubject.asObservable();
 
-}
+  }
   resend(): Observable<ResentMessage> {
 
   return this.httpClient.get<ResentMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
   }
+
+
+  linkemail(): Observable<ResentMessage> {
+    return this.httpClient.get<ResentMessage>(`${this.AUTH_SERVER}/confirmation/verify-email.{userID}`);
+  }
+
+
   
 }
 

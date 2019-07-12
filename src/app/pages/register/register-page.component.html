@@ -6,11 +6,12 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-40 p-b-15" style="height:90%;">
-				<form class="login100-form validate-form" name="form" [formGroup]="form" #myform="ngForm"
+				<form class="login100-form" name="form" [formGroup]="form" #myform="ngForm"
 					(ngSubmit)="register(myform)">
 					<span class="login100-form-title p-b-30">
 						Sign Up
 					</span>
+					<alert></alert>
 					<div class="wrap-input100 m-b-15">
 						<span class="label-input100">Username</span>
 						<input class="form-control input100" type="text" formControlName="username"
@@ -62,7 +63,7 @@
 					<div class="container-login100-form-btn p-t-30">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" [disabled]='!form.valid'>
+							<button class="login100-form-btn" type="submit" [disabled]='!form.valid'>
 								Sign Up
 							</button>
 						</div>

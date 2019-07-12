@@ -15,13 +15,14 @@ import { CommonModule} from '@angular/common';
 import { AuthService } from './services/auth.service';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToastrModule} from 'ngx-toastr';
-import { AlertComponent } from './components/shared componets/alert/alert.component';
+import { AlertComponent } from './components/alert/alert.component';
 import { VerifyemailComponent } from './pages/verifyemail/verifyemail.component';
 import { WelcomeComponent} from './pages/welcome/welcome.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component'
 import { Forgotpasswordstep2Component } from './pages/forgotpasswordstep2/forgotpasswordstep2.component'
 import { FooterComponent } from './pages/footer/footer.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
+import { LinkEmailComponent } from './pages/link-email/link-email.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
     Forgotpasswordstep2Component,
     WelcomeComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    LinkEmailComponent
   ],
   imports: [
     BrowserModule,
