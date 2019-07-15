@@ -12,6 +12,7 @@ export class KycComponent{
     imgURL: any;
     imgURL1: any;
     public message:string;
+    imgName:string = 'Choose file';
     changTab(tabIndex)
     {
         this.tabIndex = tabIndex;
@@ -27,6 +28,8 @@ export class KycComponent{
 
         var reader = new FileReader();
         this.imagePath = files;
+        console.log(this.imagePath);
+        // this.imgName = this.imagePath.FileList.File.name;
         reader.readAsDataURL(files[0]);
         reader.onload = (_event) => {
             this.imgURL = reader.result;
