@@ -13,6 +13,7 @@ export class KycComponent{
     imgURL1: any;
     public message:string;
     imgName:string = 'Choose file';
+    imgName1:string = 'Choose file';
     changTab(tabIndex)
     {
         this.tabIndex = tabIndex;
@@ -28,11 +29,10 @@ export class KycComponent{
 
         var reader = new FileReader();
         this.imagePath = files;
-        console.log(this.imagePath);
-        // this.imgName = this.imagePath.FileList.File.name;
         reader.readAsDataURL(files[0]);
         reader.onload = (_event) => {
             this.imgURL = reader.result;
+            this.imgName = files[0].name;
         }
     }
 
@@ -50,6 +50,7 @@ export class KycComponent{
         reader.readAsDataURL(files[0]);
         reader.onload = (_event) => {
             this.imgURL1 = reader.result;
+            this.imgName1 = files[0].name;
         }
     }
     // preview(e){
