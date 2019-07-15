@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { passValidator } from '../register/confirmpassword';
+import { passValidator } from '../forgotpasswordstep2/confirmpassword';
 import { AlertService} from '../../components/alert/alert.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,7 +14,7 @@ export class Forgotpasswordstep2Component implements OnInit {
   form = new FormGroup ({  
     newpassword: new FormControl('',[Validators.required, Validators.minLength(8)]),
     code: new FormControl('',[Validators.required, Validators.maxLength(6), Validators.minLength(6)]),
-    confirmpassword: new FormControl('',[Validators.required,passValidator])
+    confirmpassword: new FormControl('',[Validators.required, passValidator])
   })
   constructor(private auth : AuthService, private alert: AlertService, private router: Router) { }
 
