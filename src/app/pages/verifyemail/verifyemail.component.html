@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="jumbotron">
+    <div class="abc">
+        <h2 class="display-4">Email verification is required!</h2>
+        <!-- <p class="lead">A verification email has been sent to your email address. Check email to activate your account.</p> -->
+        <p *ngIf="message" class="lead">{{message}}</p>
+        <!-- <hr class="my-4"> -->
+
+       <span class="lead">If you do not receive an email within a few minutes, click </span> <button (click)="resentEmail()" type="button" class="btn btn-outline-primary">Resend</button>
+
+    </div>
+  </div>
+  

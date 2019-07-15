@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container my-2">
+    <div class="row">
+        <div class="col-3">
+            <div class="rounded nav-left mb-2">
+                <div class="list-group">
+                    <p class="navbar-brand text-center">User's information</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div [ngSwitch] ="tabIndex">
+                <ng-template [ngSwitchCase]="1">
+                    <h3>Step 1</h3>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input #file type="file" accept='image/*' (change)="preview(file.files)" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <img [src]="imgURL" style="width: 100%" *ngIf="imgURL">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 offset-6">
+                            <button class="btn btn-success btn-block" (click)="changTab(2)">Next</button>                        
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template [ngSwitchCase]="2">
+                    <h3>Step 2</h3>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input #file1 accept='image/*' type="file" (change)="preview1(file1.files)" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-6">
+                                <input type="file" style="background-color: whitesmoke; border: 2px dashed #1C8ADB;"  >
+                                <img [src]="imgURL1" style="width: 100%" *ngIf="imgURL1">
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-2 offset-4">
+                            <button class="btn btn-secondary btn-block" (click)="changTab(1)">Previous</button>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-success btn-block">Finish</button>
+                        </div>
+                    </div>
+                </ng-template>
+                <!-- <ng-template [ngSwitchCase]="3">
+                    <h3>Step 3</h3>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 offset-4">
+                            <button class="btn btn-secondary btn-block" (click)="changTab(2)">Previous</button>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-success btn-block">Finish</button>
+                        </div>
+                    </div>
+                </ng-template> -->
+            </div>          
+        </div>
+    </div>
+</div>
