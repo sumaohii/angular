@@ -31,7 +31,7 @@ export class AuthService {
       tap((res:  JwtResponse ) => {
          if (res.status==1) {
            console.log(res);
-           localStorage.setItem("email_message", res.todo.verifyEmail);
+           sessionStorage.setItem("email_message", res.todo.verifyEmail);
            this.authSubject.next(true);
          }
       })
@@ -44,7 +44,7 @@ export class AuthService {
         console.log(res);
         if (res.data) {
 
-          localStorage.setItem("ACCESS_TOKEN", res.data.token);       
+          sessionStorage.setItem("ACCESS_TOKEN", res.data.token);       
 
           this.authSubject.next(true);
         }
@@ -91,10 +91,6 @@ linkEmail(userID: string): Observable<ResponseMessage> {
   );
   }
 
-
-  linkemail(): Observable<ResentMessage> {
-    return this.httpClient.get<ResentMessage>(`${this.AUTH_SERVER}/confirmation/verify-email.{userID}`);
-  }
 
 
   // logout() {

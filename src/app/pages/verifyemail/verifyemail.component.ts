@@ -15,7 +15,7 @@ message: any;
 
 
   ngOnInit() {
-    this.message=localStorage.getItem("email_message");
+    this.message=sessionStorage.getItem("email_message");
     
   }
 

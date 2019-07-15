@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
   //   })
   // }
   deleteToken() {
-    localStorage.removeItem("ACCESS_TOKEN");
+    sessionStorage.removeItem("ACCESS_TOKEN");
+    this.router.navigateByUrl('\welcome');
   }
 }
