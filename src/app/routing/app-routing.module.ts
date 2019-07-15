@@ -11,6 +11,7 @@ import { FooterComponent } from '../pages/footer/footer.component';
 import {KycComponent} from '../pages/kyc/kyc.component'
 import {DashboardComponent} from '../pages/dashboard/dashboard.component';
 import {LinkemailComponent} from '../components/linkemail/linkemail.component'
+
 const routes: Routes = [
   {
     path: 'register',
@@ -44,6 +45,7 @@ const routes: Routes = [
     path: 'kyc',
     component: KycComponent
   },
+
   {path: 'dashboard',
 component: DashboardComponent},
 
@@ -51,6 +53,7 @@ component: DashboardComponent},
     component: LinkemailComponent
   },
   
+
   {
     path: '',
     redirectTo: 'welcome',

@@ -4,6 +4,7 @@
 
 	
 	<div class="limiter">
+
 		<app-navbar></app-navbar>
 		<div class="container-login100" style="padding-top:75px;">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-40 p-b-15"style="height:90%;">
@@ -41,8 +42,7 @@
 							[ngClass]="{'is-invalid' : form.get('password').touched && form.get('password').invalid}"
 							placeholder="*at least 8 characters" style="border: 0px;" />
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
-						<div *ngIf="form.get('password').touched && form.get('password').invalid"
-							class="invalid-feedback feedback">
+						<div *ngIf="form.get('password').touched && form.get('password').invalid" class="invalid-feedback feedback">
 							<div *ngIf="form.get('password').errors.required">Password cannot be null</div>
 							<div *ngIf="form.get('password').errors.minlength">Password must be at least 8 characters
 							</div>
@@ -57,7 +57,7 @@
 							placeholder="*match above password" style="border: 0px;" />
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 						<div *ngIf="form.get('confirmpassword').touched && form.get('confirmpassword').invalid"
-							class="invalid-feedback a">
+							class="invalid-feedback feedback">
 							<div *ngIf="form.get('confirmpassword').errors.required">Incorrect</div>
 						</div>
 					</div>

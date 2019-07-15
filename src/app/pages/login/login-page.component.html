@@ -2,15 +2,16 @@
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<form name="form" [formGroup]="form" #myform="ngForm" (ngSubmit)="login(myform)">
 	
 	<div class="limiter">
 		<app-navbar></app-navbar>
 		<div class="container-login100" style="padding-top:75px;">
 
-		
+			
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-40 p-b-15" style="height:90%;">
-				<form class="login100-form validate-input" name="form"[formGroup]="form" #myform ="ngForm" (ngSubmit)="login(myform)">
+				<form class="login100-form" name="form"[formGroup]="form" #myform ="ngForm" (ngSubmit)="login(myform)">
 					<span class="login100-form-title p-b-20">
 						Login
 					</span>

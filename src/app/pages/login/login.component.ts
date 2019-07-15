@@ -7,7 +7,7 @@ import {AlertService} from '../../components/alert/alert.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login.component.css', './css/main.css', './css/util.css']
+  styleUrls: ['./login.component.css', './css/main.css', './css/util.css', './../navbar/navbar.component.css']
 })
 export class LoginComponent implements OnInit {
   form = new FormGroup ({  

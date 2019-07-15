@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { passValidator } from '../register/confirmpassword';
-import {AlertService} from '../../components/alert/alert.service';
+import { AlertService} from '../../components/alert/alert.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 @Component({

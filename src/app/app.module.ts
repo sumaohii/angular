@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule} from '@angular/router';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { KycComponent } from './pages/kyc/kyc.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import { LinkemailComponent } from './components/linkemail/linkemail.component';
+
 @NgModule({
   declarations: [
     AppComponent,

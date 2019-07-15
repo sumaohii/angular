@@ -8,12 +8,11 @@ import { ResponseMessage} from '../models/response-message'
 import { Email } from '../models/email';
 import {ForgotPassword} from '../models/forgotpassword';
 
-
-
 // const httpOptions = {
 //   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 // };
 const headers = new HttpHeaders();
+
 @Injectable({
   providedIn: 'root'
 })
@@ -63,25 +62,28 @@ code(e: Email):Observable<ResponseMessage> {
       })
     );
   }
-
   codeChangePassword(f : ForgotPassword, codeid:string):Observable<ResponseMessage> {
     return this.httpClient.put<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f,{headers: headers.append("codeid",codeid)}).pipe(
+
       tap(async (res: ResponseMessage) => {
        
           console.log (res.status +"\n"+ res.message);
-              this.authSubject.next(true);
+              this.authSubject.next(true);   
         
       })
     );
   }
 isAuthenticated() {
+
     return  this.authSubject.asObservable();
+
 
 }
 resend(): Observable<ResponseMessage> {
 
   return this.httpClient.get<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
   }
+
 
 linkEmail(userID: string): Observable<ResponseMessage> {
   return this.httpClient.get<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email.${userID}`).pipe(
@@ -90,7 +92,14 @@ linkEmail(userID: string): Observable<ResponseMessage> {
     })
   );
   }
-  
+
+
+
+  // logout() {
+  //     return this.httpClient.get<logoutStatus>('api/logout.php')
+  // }
+
+ 
 }
 
 

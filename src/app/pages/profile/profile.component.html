@@ -118,11 +118,14 @@
                                     <a class="dropdown-item" href="#">Separated link</a>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <span class="no-icon">Log out</span>
-                                </a>
-                            </li>
+                            <form name="form"[formGroup]="form" #myform ="ngForm" (ngSubmit)="login(myform)">
+                                <li class="nav-item">
+                                    <a class="nav-link" style="cursor:pointer" *ngIf="!_auth">
+                                        <span class="no-icon">Log out</span>
+                                    </a>
+                                </li>
+                            </form>
+                            
                         </ul>
                     </div>
                 </div>
