@@ -4,14 +4,10 @@ import { User } from  '../models/user';
 import { JwtResponse } from  '../models/jwt-response';
 import { tap } from  'rxjs/operators';
 import { Observable, BehaviorSubject } from  'rxjs';
-import { ResentMessage} from '../models/resent-email'
+import { ResponseMessage} from '../models/response-message'
 import { Email } from '../models/email';
 import {ForgotPassword} from '../models/forgotpassword';
-
-
-interface logoutStatus {
-  success : boolean
-}
+import { LinkemailComponent } from '../components/linkemail/linkemail.component';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -31,10 +27,8 @@ export class AuthService {
 
   register(user: User): Observable<JwtResponse> {  
 
-     return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, httpOptions)
-     .pipe(
+     return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, httpOptions).pipe(
       tap((res:  JwtResponse ) => {
- 
          if (res.status==1) {
            console.log(res);
            localStorage.setItem("email_message", res.todo.verifyEmail);
@@ -58,9 +52,9 @@ export class AuthService {
     );
   }
 
-code(e: Email):Observable<ResentMessage> {
-    return this.httpClient.post<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword`,e, httpOptions).pipe(
-      tap(async (res: ResentMessage) => {
+code(e: Email):Observable<ResponseMessage> {
+    return this.httpClient.post<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword`,e, httpOptions).pipe(
+      tap(async (res: ResponseMessage) => {
           this.authSubject.next(true);
         
       })
@@ -68,10 +62,9 @@ code(e: Email):Observable<ResentMessage> {
   }
 
 
-  codeChangePassword(f : ForgotPassword):Observable<ResentMessage> {
-    return this.httpClient.put<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f,httpOptions).pipe(
-      tap(async (res: ResentMessage) => {
-
+  codeChangePassword(f : ForgotPassword):Observable<ResponseMessage> {
+    return this.httpClient.put<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f,httpOptions).pipe(
+      tap(async (res: ResponseMessage) => {
           console.log (res.status +"\n"+ res.message);
               this.authSubject.next(true);   
         
@@ -82,10 +75,20 @@ isAuthenticated() {
 
     return  this.authSubject.asObservable();
 
-  }
-  resend(): Observable<ResentMessage> {
 
-  return this.httpClient.get<ResentMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
+}
+resend(): Observable<ResponseMessage> {
+
+  return this.httpClient.get<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
+  }
+
+
+linkEmail(userID: string): Observable<ResponseMessage> {
+  return this.httpClient.get<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email.${userID}`).pipe(
+    tap(async (res: ResponseMessage) => {
+        console.log(res);
+    })
+  );
   }
 
 
@@ -100,4 +103,5 @@ isAuthenticated() {
 
  
 }
+
 

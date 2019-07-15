@@ -1,15 +1,22 @@
 export interface JwtResponse {
-    statusCode: number;
     status: number;
     message: string;
     data: {
-        username: string,
-        email: string,
-        role: string,
-        token: string,     
-
+      user: {
+        profile: {
+        fullname: string,
+        phone: string,
+        birthday: string,
+        }
+        role: string;
+        _id: string;
+        username: string;
+        email: string;
+       }
+    token: string;
     }
     todo: {
         verifyEmail: string;
     }
+    
 }

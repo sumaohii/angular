@@ -1,4 +1,4 @@
-export interface ResentMessage {
+export interface ResponseMessage {
     status: number;
     message: string;
 }
