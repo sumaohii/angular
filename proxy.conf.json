@@ -1,6 +1,6 @@
 {
     "/web-api": {
-      "target": "http://localhost:81/",
+      "target": "http://142.93.253.93:81/",
       "secure": false
     }
   }
