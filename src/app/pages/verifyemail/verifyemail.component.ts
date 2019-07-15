@@ -16,13 +16,14 @@ message: any;
 
   ngOnInit() {
     this.message=sessionStorage.getItem("email_message");
-    
+    sessionStorage.removeItem("email_message");
   }
 
   resentEmail() {
     return this.auth.resend().subscribe((res) => {
       console.log(res.message);
       // this.router.navigateByUrl('/login');
+      
     })
   }
 }

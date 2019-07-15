@@ -20,6 +20,7 @@ export class Forgotpasswordstep2Component implements OnInit {
 
   ngOnInit() {
     this.codeid=sessionStorage.getItem("codeid");
+    sessionStorage.removeItem("codeid");
   }
 changePassword(form){
   console.log(form.value);
@@ -31,6 +32,7 @@ changePassword(form){
        this.alert.success(res.message +" Redirecting...");
       setTimeout(()=> {this.router.navigateByUrl('/login')}, 3000);
      }
+     
   })
 }
 }
