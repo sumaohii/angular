@@ -23,6 +23,8 @@ import { Forgotpasswordstep2Component } from './pages/forgotpasswordstep2/forgot
 import { FooterComponent } from './pages/footer/footer.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { KycComponent } from './pages/kyc/kyc.component';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
+import { LinkemailComponent } from './components/linkemail/linkemail.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { KycComponent } from './pages/kyc/kyc.component';
     WelcomeComponent,
     FooterComponent,
     NavbarComponent,
-    KycComponent
+    KycComponent,
+    DashboardComponent,
+    LinkemailComponent,
   ],
   imports: [
     BrowserModule,

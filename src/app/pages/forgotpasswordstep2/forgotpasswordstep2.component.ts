@@ -25,7 +25,7 @@ changePassword(form){
     if (res.status==0) this.alert.error(res.message);
     else if (res.status==1) {
       console.log(res);
-      this.alert.success(res.message +" Redirecting...");
+       this.alert.success(res.message +" Redirecting...");
       setTimeout(()=> {this.router.navigateByUrl('/login')}, 3000);
      }
   })

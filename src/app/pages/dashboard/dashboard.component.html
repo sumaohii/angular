@@ -34,7 +34,7 @@
 					<li class="nav-item"><a class="nav-link" href="cards.html"><em class="fa fa-clone"></em> Cards <span class="sr-only">(current)</span></a></li>
 				</ul>
 				
-				<a href="#" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
+				<a (click)="deleteToken()" class="logout-button"><em class="fa fa-power-off"></em> Sign out</a></nav>
 			<main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
 				<header class="page-header row justify-center">
 					<div class="col-md-6 col-lg-8" >
@@ -49,7 +49,7 @@
 						</a>
 						<div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em class="fa fa-user-circle mr-1"></em> View Profile</a>
 						     <a class="dropdown-item" href="#"><em class="fa fa-sliders mr-1"></em> Preferences</a>
-						     <a class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+						     <button (click)="logout()" type="button" class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</button></div>
 					</div>
 					<div class="clear"></div>
 				</header>
@@ -144,14 +144,6 @@
 
 				</section>
 
-				<section class="row">
-					<div class="col-sm-12">
-						
-						<section class="row">
-							<div class="col-12 mt-1 mb-4">Template by <a href="https://www.medialoot.com">Medialoot</a></div>
-						</section>
-					</div>
-				</section>
 			</main>
 		</div>
 	</div>

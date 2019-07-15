@@ -7,6 +7,12 @@ import { Observable, BehaviorSubject } from  'rxjs';
 import { ResentMessage} from '../models/resent-email'
 import { Email } from '../models/email';
 import {ForgotPassword} from '../models/forgotpassword';
+
+
+interface logoutStatus {
+  success : boolean
+}
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -58,19 +64,19 @@ code(e: Email):Observable<ResentMessage> {
           this.authSubject.next(true);
         
       })
-    );;
+    );
   }
 
 
   codeChangePassword(f : ForgotPassword):Observable<ResentMessage> {
-    return this.httpClient.put<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f).pipe(
+    return this.httpClient.put<ResentMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f,httpOptions).pipe(
       tap(async (res: ResentMessage) => {
-        console.log(f);
-        console.log(res.status+"\n"+res.message);
-        //  this.authSubject.next(true);
+
+          console.log (res.status +"\n"+ res.message);
+              this.authSubject.next(true);   
         
       })
-    );;
+    );
   }
 isAuthenticated() {
 
@@ -88,6 +94,10 @@ isAuthenticated() {
   }
 
 
-  
+  // logout() {
+  //     return this.httpClient.get<logoutStatus>('api/logout.php')
+  // }
+
+ 
 }
 

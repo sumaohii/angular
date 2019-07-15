@@ -9,6 +9,7 @@ import { ForgotpasswordComponent } from '../pages/forgotpassword/forgotpassword.
 import { Forgotpasswordstep2Component } from '../pages/forgotpasswordstep2/forgotpasswordstep2.component'
 import { FooterComponent } from '../pages/footer/footer.component';
 import {KycComponent} from '../pages/kyc/kyc.component'
+import {DashboardComponent} from '../pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,10 @@ const routes: Routes = [
     path: 'kyc',
     component: KycComponent
   },
-  
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
 
   {
     path: '',
