@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./forgotpasswordstep2.component.css']
 })
 export class Forgotpasswordstep2Component implements OnInit {
+  codeid: string;
   form = new FormGroup ({  
     newpassword: new FormControl('',[Validators.required, Validators.minLength(8)]),
     code: new FormControl('',[Validators.required, Validators.maxLength(6), Validators.minLength(6)]),
@@ -18,12 +19,14 @@ export class Forgotpasswordstep2Component implements OnInit {
   constructor(private auth : AuthService, private alert: AlertService, private router: Router) { }
 
   ngOnInit() {
+    this.codeid=sessionStorage.getItem("codeid");
   }
 changePassword(form){
   console.log(form.value);
-  return this.auth.codeChangePassword(form.value).subscribe((res) => {
+  return this.auth.codeChangePassword(form.value, this.codeid).subscribe((res) => {
     if (res.status==0) this.alert.error(res.message);
     else if (res.status==1) {
+      console.log(this.codeid);
       console.log(res);
        this.alert.success(res.message +" Redirecting...");
       setTimeout(()=> {this.router.navigateByUrl('/login')}, 3000);
