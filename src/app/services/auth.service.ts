@@ -7,11 +7,12 @@ import { Observable, BehaviorSubject } from  'rxjs';
 import { ResponseMessage} from '../models/response-message'
 import { Email } from '../models/email';
 import {ForgotPassword} from '../models/forgotpassword';
-import { LinkemailComponent } from '../components/linkemail/linkemail.component';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+// const httpOptions = {
+//   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+// };
+const headers = new HttpHeaders();
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +28,7 @@ export class AuthService {
 
   register(user: User): Observable<JwtResponse> {  
 
-     return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user, httpOptions).pipe(
+     return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/new`, user).pipe(
       tap((res:  JwtResponse ) => {
          if (res.status==1) {
            console.log(res);
@@ -53,18 +54,19 @@ export class AuthService {
   }
 
 code(e: Email):Observable<ResponseMessage> {
-    return this.httpClient.post<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword`,e, httpOptions).pipe(
+    return this.httpClient.post<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword`,e).pipe(
       tap(async (res: ResponseMessage) => {
+         sessionStorage.setItem("codeid", res.data.codeID);
           this.authSubject.next(true);
         
       })
     );
   }
+  codeChangePassword(f : ForgotPassword, codeid:string):Observable<ResponseMessage> {
+    return this.httpClient.put<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f,{headers: headers.append("codeid",codeid)}).pipe(
 
-
-  codeChangePassword(f : ForgotPassword):Observable<ResponseMessage> {
-    return this.httpClient.put<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f,httpOptions).pipe(
       tap(async (res: ResponseMessage) => {
+       
           console.log (res.status +"\n"+ res.message);
               this.authSubject.next(true);   
         
