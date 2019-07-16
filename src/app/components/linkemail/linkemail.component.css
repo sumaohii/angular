@@ -1,0 +1,24 @@
+@import url('../../../assets/vendor/bootstrap/css/bootstrap.min.css');
+@import url('../../../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css');
+
+.btn-white {
+    font-size: 18px;
+    border: solid 2px; 
+    border-radius: 40px;
+    display: inline-block;
+    border-color: #008080; } 
+.btn-small {
+    padding: 4px 16px; }
+
+.btn-large {
+     padding: 12px 25px; }
+.btn-fill {
+              border-radius: 40px;
+            display: inline-block;
+            text-transform: uppercase; 
+            background-color: #008080; }
+          
+ .btn-fill:hover, .btn-fill:focus {
+            color: #fff;
+            background-color: #035a5a;
+            border-color: rgb(36, 138, 121); }            

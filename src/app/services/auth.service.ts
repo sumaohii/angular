@@ -33,6 +33,7 @@ export class AuthService {
          if (res.status==1) {
            console.log(res);
            sessionStorage.setItem("email_message", res.todo.verifyEmail);
+           sessionStorage.setItem("email", res.data.user.email );
            this.authSubject.next(true);
          }
       })
@@ -79,9 +80,13 @@ isAuthenticated() {
 
 
 }
-resend(): Observable<ResponseMessage> {
-
-  return this.httpClient.get<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
+resend(e: Email): Observable<ResponseMessage> {
+  console.log(e);
+  return this.httpClient.post<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`, e).pipe(
+    tap(async (res: ResponseMessage) => {
+        console.log(res.message);
+    })
+  );
   }
 
 
