@@ -1,0 +1,10 @@
+<div class="container">
+    <div class ="p-l-55 p-r-55 p-t-40 p-b-15">
+        <h2 class="text-center">Your Identity Verification</h2>
+        <!-- <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+        <button (click)="fileInput.click()">Select File</button> -->
+        <input type ="file" (change)="onFileSelected($event)">
+        <!-- <input type ="file" (change)="onFileSelected2($event)"> -->
+        <button type="button" (click)="onUpload()">Upload!</button>
+    </div>
+</div>
