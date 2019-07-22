@@ -33,6 +33,7 @@ export class AuthService {
          if (res.status==1) {
            console.log(res);
            sessionStorage.setItem("email_message", res.todo.verifyEmail);
+           sessionStorage.setItem("email", res.data.user.email );
            this.authSubject.next(true);
          }
       })
@@ -63,7 +64,7 @@ export class AuthService {
     );
   }
   codeChangePassword(f : ForgotPassword, codeid:string):Observable<ResponseMessage> {
-    return this.httpClient.put<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword.newpassword`,f,{headers: headers.append("codeid",codeid)}).pipe(
+    return this.httpClient.put<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword/newpassword`,f,{headers: headers.append("codeid",codeid)}).pipe(
 
       tap(async (res: ResponseMessage) => {
        
@@ -79,16 +80,22 @@ isAuthenticated() {
 
 
 }
-resend(): Observable<ResponseMessage> {
-
-  return this.httpClient.get<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`);
+resend(e: Email): Observable<ResponseMessage> {
+  // console.log(e);
+  return this.httpClient.post<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/resend-email`, e).pipe(
+    tap(async (res: ResponseMessage) => {
+        console.log(res.message);
+        this.authSubject.next(true); 
+    })
+  );
   }
 
 
 linkEmail(userID: string): Observable<ResponseMessage> {
-  return this.httpClient.get<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email.${userID}`).pipe(
+  return this.httpClient.get<ResponseMessage>(`${this.AUTH_SERVER}/confirmation/verify-email/${userID}`).pipe(
     tap(async (res: ResponseMessage) => {
         console.log(res);
+        this.authSubject.next(true); 
     })
   );
   }

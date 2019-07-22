@@ -2,10 +2,10 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <div class="jumbotron">
-    <div class="abc">
-        <h2 class="display-4">Congratulation! Your account is succesfully activated! </h2>
-           <span class="lead">Welcome to BLOCKCHAIN </span> <button routerLink="/login" type="button" class="btn btn-outline-primary">Login</button>
-
+    <div class="abc text-center">
+        <h3 *ngIf="message" class="display-4">{{message}}</h3>
+           <h4 class="lead" style="padding-top: 10px; padding-bottom: 10px; font-size: 30px;">Welcome to BLOCKCHAIN website </h4>
+            <a routerLink="/login" style="text-decoration: none;"  class="btn-white btn-small">Login</a>
     </div>
   </div>
   
