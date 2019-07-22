@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component ({
     selector: "app-maincontent",
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
 })
 
 export class KycComponent{
+
+    form = new FormGroup ({  
+      })
+
+
+
     tabIndex:number = 1;
     public imagePath;
     public imagePath1;
@@ -52,6 +59,11 @@ export class KycComponent{
             this.imgURL1 = reader.result;
             this.imgName1 = files[0].name;
         }
+    }
+
+
+    abc(){
+        console.log("hello");
     }
     // preview(e){
     //     console.log(e);

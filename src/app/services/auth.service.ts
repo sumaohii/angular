@@ -53,7 +53,7 @@ export class AuthService {
     );
   }
 
-code(e: Email):Observable<ResponseMessage> {
+  code(e: Email):Observable<ResponseMessage> {
     return this.httpClient.post<ResponseMessage>(`${this.AUTH_SERVER}/forgotpassword`,e).pipe(
       tap(async (res: ResponseMessage) => {
          sessionStorage.setItem("codeid", res.data.codeID);

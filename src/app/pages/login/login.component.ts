@@ -3,7 +3,7 @@ import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service'
 import { User } from '../../models/user';
-import {AlertService} from '../../components/alert/alert.service';
+import { AlertService} from '../../components/alert/alert.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login-page.component.html',
