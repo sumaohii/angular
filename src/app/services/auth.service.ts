@@ -7,7 +7,7 @@ import { Observable, BehaviorSubject } from  'rxjs';
 import { ResponseMessage} from '../models/response-message'
 import { Email } from '../models/email';
 import {ForgotPassword} from '../models/forgotpassword';
-
+import {KycImage} from '../models/kyc-image';
 // const httpOptions = {
 //   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 // };
@@ -100,12 +100,12 @@ linkEmail(userID: string): Observable<ResponseMessage> {
   );
   }
 
-
-
-  // logout() {
-  //     return this.httpClient.get<logoutStatus>('api/logout.php')
-  // }
-
+sendKycImage (img: FormData): Observable<ResponseMessage>{
+  return this.httpClient.post<ResponseMessage>(`${this.AUTH_SERVER}/kyc-upload-img`, img, {headers: headers.append("Authorization", sessionStorage.getItem("ACCESS_TOKEN"))}).pipe(tap(async (res: ResponseMessage) => {
+    console.log(res);
+    this.authSubject.next(true);
+  }))
+}
  
 }
 

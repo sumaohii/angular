@@ -10,8 +10,8 @@ import { Forgotpasswordstep2Component } from '../pages/forgotpasswordstep2/forgo
 import { FooterComponent } from '../pages/footer/footer.component';
 import {KycComponent} from '../pages/kyc/kyc.component'
 import {DashboardComponent} from '../pages/dashboard/dashboard.component';
-import {LinkemailComponent} from '../components/linkemail/linkemail.component'
-
+import {LinkemailComponent} from '../components/linkemail/linkemail.component';
+import {KycImageComponent} from '../pages/kyc-image/kyc-image.component'
 const routes: Routes = [
   {
     path: 'register',
@@ -53,7 +53,10 @@ component: DashboardComponent},
     component: LinkemailComponent
   },
   
-
+  {
+    path: 'verify-by-images',
+    component: KycImageComponent
+  },
   {
     path: '',
     redirectTo: 'welcome',
