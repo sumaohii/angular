@@ -26,6 +26,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { KycComponent } from './pages/kyc/kyc.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import { LinkemailComponent } from './components/linkemail/linkemail.component';
+import { KycImageComponent } from './pages/kyc-image/kyc-image.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { LinkemailComponent } from './components/linkemail/linkemail.component';
     KycComponent,
     DashboardComponent,
     LinkemailComponent,
+    KycImageComponent,
   ],
   imports: [
     BrowserModule,
