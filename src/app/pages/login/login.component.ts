@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
         if (res.data) {
       console.log("Logged in! ");
       this.alertService.success(res.message+" Redirecting...");
-      setTimeout(() => {this.router.navigateByUrl('/dashboard');}, 3000);}
+      setTimeout(() => {this.router.navigateByUrl('/dashboard');}, 2000);}
     else {
         console.log ("Could not authenticate");
         this.alertService.error(res.message);}

@@ -7,7 +7,7 @@ import { Observable, BehaviorSubject } from  'rxjs';
 import { ResponseMessage} from '../models/response-message'
 import { Email } from '../models/email';
 import {ForgotPassword} from '../models/forgotpassword';
-import {KycImage} from '../models/kyc-image';
+// import {HeaderService} from './header.service';
 // const httpOptions = {
 //   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 // };

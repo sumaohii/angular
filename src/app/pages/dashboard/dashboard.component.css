@@ -348,7 +348,7 @@ code {
     color: #ffffff;
     border: none;
     font-size: 0.9rem;
-    padding: 0rem 1rem;
+    padding: 0rem 0rem;
     text-transform: uppercase;
     letter-spacing: .2rem; }
   .sidebar .site-title {
