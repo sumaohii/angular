@@ -1,13 +1,14 @@
-
+<app-navbar></app-navbar>
+<div class="kyc">
 <div class="container">
-    <div class="row">
+    <div class="row" style="padding-top:150px;">
         <div class ="col-md-6 offset-md-3 p-5 ">
             <div class ="col-md-12">
-             <div class="form-group">
-                   <h2 class="text-center">User Identity</h2>
+             <div class="form-group" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                   <h2 class="text-center" style="color:  #035252;">User Identity</h2>
                    <div class="text-center">Please upload your 2 identity photos for verification...</div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row pt-3">
                     <div class="label-photo ">A photo of your passport/ID</div>
                     <div class="col-sm-10 mt-2 pl-5">
                             <input type ="file" accept=".jpg, .jpeg"(change)="onFileSelected($event)">
@@ -16,7 +17,7 @@
                         <div class="notice mt-2">*Only accept: .jpg, .jpeg</div>
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row pt-4">
                         <div class="label-photo ">A photo of you holding your passport/ID</div>
                         <div class="col-sm-10 mt-2 pl-5">
                                 <input type ="file" accept=".jpg, .jpeg"(change)="onFileSelected2($event)">
@@ -27,7 +28,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="a">
-                            <button class="col-md-4 offset-md-4 btn btn-outline-primary btn-md btn-block" type="button" (click)="onUpload()">Upload Image</button>
+                            <button class="col-md-4  btn btn-outline-primary btn-white btn-block" type="button" (click)="onUpload()">Upload Image</button>
                         </div>
                     </div>
                 </div>
@@ -36,3 +37,6 @@
         </div>
 
     </div>
+
+  </div>
+  <app-footer></app-footer>

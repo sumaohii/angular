@@ -1,19 +1,58 @@
-@import "../../../assets/vendor/bootstrap/css/bootstrap.min.css";
+@import url('../../../assets/vendor/bootstrap/css/bootstrap.min.css');
+/* @import url('../../../assets/fonts/iconic/css/material-design-iconic-font.min.css'); */
+/* @import url('../../../assets/vendor/bootstrap/css/bootstrap-grid.min.css');
+@import url('../../../assets/vendor/bootstrap/css/bootstrap-reboot.min.css');
+@import url('../../../assets/vendor/css/util.css');
+@import url('../../../assets/vendor/bootstrap/css/bootstrap.css');
+@import url('../../../assets/vendor/bootstrap/css/bootstrap-reboot.css');
+@import url('../../../assets/vendor/bootstrap/css/bootstrap-grid.css'); */
 
 .label-photo {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 16px;
         font-weight: bold;
+        color:  #035252;
 }
 .col-md-6.offset-md-3.p-5{
+    
     background-color: whitesmoke;
     border-radius: 10px;
 }
 .notice{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 14px;
+        color:  #035252;
         font-style: italic;
 }
 .a {
     display:flex;flex-wrap: wrap; justify-content: center;align-items: center;
 }
+.kyc{
+
+        background-image: 
+       
+        linear-gradient(
+            rgba(26, 28, 29, 0.45),
+            rgba(26, 28, 29, 0.45)
+        ),
+      
+        /* your image */
+      
+        url("../../../assets/img/iStock-871491470.jpg");
+        height: 100%;
+        background-repeat: repeat-y;
+        background-size: cover;
+        background-position: center;
+    
+}
+
+.btn:hover, .btn:focus {
+    color: #fff;
+    background-color: #008080; }
+  .btn-white {
+        font-size: 17px;
+        border: solid 2px; 
+        border-radius: 30px;
+        color: #008080;
+        display: inline-block;
+        border-color: #008080; }      

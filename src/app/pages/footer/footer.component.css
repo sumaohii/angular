@@ -53,7 +53,7 @@ a{
   footer a:hover {
     color: rgb(82, 229, 255); }
   footer ul.footer-group {
-    padding-left: 0px;
+    padding-left: 15px;
     padding-top: 0px; }
   footer ul.footer-group li {
     display: inline-block; }
