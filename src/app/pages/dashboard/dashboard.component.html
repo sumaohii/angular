@@ -57,15 +57,20 @@
 				<section class="row">
 
 					<div class="col-lg-4 col-sm-12 order-sm-1 order-lg-2">
-						<div class="card">
-							<div class="thumbnail">
+						<div class="card right-profile">
+							<div class="profile">
 								<div class="image">
-									<img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Tom_Hiddleston_%2827992938324%29_%28cropped%29.jpg/220px-Tom_Hiddleston_%2827992938324%29_%28cropped%29.jpg" alt="">
+									<img class="" [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" alt="">
+									
 								</div>
 								<div class="caption text-center">
 									<p>noobmaster69</p>
 								</div>
 							</div>
+							<br>
+							<h6>badass</h6>
+							<p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quod assumenda aliquam ea, omnis dolor molestias veniam nam magni corrupti. Voluptatibus sapiente optio tenetur harum! Provident earum modi doloribus magnam.</p>
+							<input value="Change picture" type='file' (change)="onSelectFile($event)">
 						</div>
 					</div>
 
