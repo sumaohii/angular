@@ -2,10 +2,6 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 43e0052288bf5923b4c0caa5ece4a5a0e02bc2ac
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 /**
