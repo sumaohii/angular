@@ -8,7 +8,6 @@ import { WelcomeComponent } from '../pages/welcome/welcome.component';
 import { ForgotpasswordComponent } from '../pages/forgotpassword/forgotpassword.component'
 import { Forgotpasswordstep2Component } from '../pages/forgotpasswordstep2/forgotpasswordstep2.component'
 import { FooterComponent } from '../pages/footer/footer.component';
-import {KycComponent} from '../pages/kyc/kyc.component'
 import {DashboardComponent} from '../pages/dashboard/dashboard.component';
 import {LinkemailComponent} from '../components/linkemail/linkemail.component';
 import {KycImageComponent} from '../pages/kyc-image/kyc-image.component'
@@ -41,11 +40,6 @@ const routes: Routes = [
     path: 'user-profile',
     component: ProfileComponent
   },
-  {
-    path: 'kyc',
-    component: KycComponent
-  },
-
   {path: 'dashboard',
 component: DashboardComponent},
 
