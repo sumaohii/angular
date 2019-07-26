@@ -11,12 +11,17 @@ import { FormBuilder } from '@angular/forms';
 export class KycImageComponent implements OnInit {
   selectedFile: File
   selectedFile2: File
- 
+  status:number;
+  message:string;
+
   form= new FormData();
   constructor(private auth: AuthService, private router:Router, private fb: FormBuilder) { }
 
   ngOnInit() {
-    
+    this.auth.fetchKycStatus().subscribe((res)=>{
+      this.message=res.message;
+      this.status=res.status;
+    })
   }
   onFileSelected(event) {
     this.selectedFile = event.target.files[0];

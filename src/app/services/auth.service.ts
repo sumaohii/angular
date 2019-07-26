@@ -106,7 +106,13 @@ sendKycImage (img: FormData): Observable<ResponseMessage>{
     this.authSubject.next(true);
   }))
 }
- 
+
+fetchKycStatus(): Observable<ResponseMessage>{
+  return this.httpClient.get<ResponseMessage>(`${this.AUTH_SERVER}/kyc-verify/fetch-with-id`,{headers: headers.append("Authorization", sessionStorage.getItem("ACCESS_TOKEN"))}).pipe(tap(async (res: ResponseMessage) => {
+    console.log(res);
+    this.authSubject.next(true);
+  }))
+}
 }
 
 
