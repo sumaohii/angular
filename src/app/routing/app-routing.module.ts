@@ -2,7 +2,6 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from '../pages/register/register.component';
 import { LoginComponent } from '../pages/login/login.component';
-import { ProfileComponent } from '../pages/profile/profile.component';
 import { VerifyemailComponent } from '../pages/verifyemail/verifyemail.component';
 import { WelcomeComponent } from '../pages/welcome/welcome.component';
 import { ForgotpasswordComponent } from '../pages/forgotpassword/forgotpassword.component'
@@ -36,10 +35,6 @@ const routes: Routes = [
   {
     path: 'forgotpasswordstep2',
     component: Forgotpasswordstep2Component
-  },
-  {
-    path: 'user-profile',
-    component: ProfileComponent
   },
   {path: 'dashboard',
 component: DashboardComponent

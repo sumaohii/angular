@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
@@ -32,7 +31,6 @@ import { VerifyKycComponent } from './pages/admin-dashboard/verify-kyc/verify-ky
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    ProfileComponent,
     AlertComponent,
     VerifyemailComponent,
     WelcomeComponent,
