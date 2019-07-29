@@ -131,7 +131,6 @@ header .member-actions {
 .nav-toggle {
   position: absolute;
   top: 0;
-  right: 15px;
   z-index: 999999;
   padding: 10px 35px 16px 0;
   cursor: pointer
@@ -266,7 +265,7 @@ h5 {
 
 .btn-small {
 
-  padding: 4px 14px; }
+  padding: 6px 14px; }
 
 .btn-large {
   padding: 12px 25px; }

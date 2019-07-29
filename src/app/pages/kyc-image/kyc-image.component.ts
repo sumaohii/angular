@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService} from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-kyc-image',
@@ -11,10 +11,12 @@ import { FormBuilder } from '@angular/forms';
 export class KycImageComponent implements OnInit {
   selectedFile: File
   selectedFile2: File
+
   status:number;
   message:string;
 
   form= new FormData();
+
   constructor(private auth: AuthService, private router:Router, private fb: FormBuilder) { }
 
   ngOnInit() {

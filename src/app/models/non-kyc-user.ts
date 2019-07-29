@@ -13,5 +13,5 @@ export interface NonKycUser {
     message: string;
     // data<NonKycUser>:[
     
-    ]
+    
     }
