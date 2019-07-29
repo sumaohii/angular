@@ -6,12 +6,13 @@ export interface NonKycUser {
     }
     isKYCVerified: boolean;
     _id: string;
+   
   }
 
-  export interface AllNonKycUser {
-    status: number;
-    message: string;
-    // data<NonKycUser>:[
+  // export interface AllNonKycUser {
+  //   status: number;
+  //   message: string;
+  //   // data<NonKycUser>:[
     
     
-    }
+  //   }
