@@ -1,12 +1,8 @@
-<<<<<<< HEAD
+
 # Confirm
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
-=======
-# CRUD
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
->>>>>>> 43e0052288bf5923b4c0caa5ece4a5a0e02bc2ac
 
 ## Development server
 

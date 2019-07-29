@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { Routes, RouterModule} from '@angular/router';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,11 +22,11 @@ import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.c
 import { Forgotpasswordstep2Component } from './pages/forgotpasswordstep2/forgotpasswordstep2.component'
 import { FooterComponent } from './pages/footer/footer.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
-import { KycComponent } from './pages/kyc/kyc.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import { LinkemailComponent } from './components/linkemail/linkemail.component';
 import { KycImageComponent } from './pages/kyc-image/kyc-image.component';
-import { HeaderService} from './services/header.service'
+import { HeaderService} from './services/header.service';
+import { VerifyKycComponent } from './pages/admin-dashboard/verify-kyc/verify-kyc.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,10 +41,10 @@ import { HeaderService} from './services/header.service'
     WelcomeComponent,
     FooterComponent,
     NavbarComponent,
-    KycComponent,
     DashboardComponent,
     LinkemailComponent,
     KycImageComponent,
+    VerifyKycComponent,
   ],
   imports: [
     BrowserModule,

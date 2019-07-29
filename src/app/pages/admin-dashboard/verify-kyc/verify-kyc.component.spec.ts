@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KycComponent } from './kyc.component';
+import { VerifyKycComponent } from './verify-kyc.component';
 
-describe('KycComponent', () => {
-  let component: KycComponent;
-  let fixture: ComponentFixture<KycComponent>;
+describe('VerifyKycComponent', () => {
+  let component: VerifyKycComponent;
+  let fixture: ComponentFixture<VerifyKycComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ KycComponent ]
+      declarations: [ VerifyKycComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(KycComponent);
+    fixture = TestBed.createComponent(VerifyKycComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
