@@ -35,7 +35,9 @@ export class DashboardComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]); // read file as data url
       // const fileReader: FileReader = fileReader();
       reader.onload = (event) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
+        if(event.target){
+          this.url = event.target.result;
+        }
       }
     }
   }
