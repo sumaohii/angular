@@ -27,4 +27,17 @@ export class DashboardComponent implements OnInit {
     sessionStorage.removeItem("ACCESS_TOKEN");
     this.router.navigateByUrl('\welcome');
   }
+  url:any;
+  onSelectFile(event) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+      // const fileReader: FileReader = fileReader();
+      reader.onload = (event:Event) => { // called once readAsDataURL is completed
+     
+          this.url = reader.result;
+        }
+    }
+  }
 }

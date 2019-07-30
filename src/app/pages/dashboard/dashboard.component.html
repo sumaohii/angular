@@ -41,7 +41,7 @@
 						<h1 class="float-left text-center text-md-left">User information</h1>
 					</div>
 					<div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<img src="" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
+						<img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
 						<div class="username mt-1">
 							<h4 class="mb-1">Username</h4>
 							<h6 class="text-muted">Super Admin</h6>
@@ -49,7 +49,7 @@
 						</a>
 						<div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em class="fa fa-user-circle mr-1"></em> View Profile</a>
 						     <a class="dropdown-item" href="#"><em class="fa fa-sliders mr-1"></em> Preferences</a>
-						     <button (click)="logout()" type="button" class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</button></div>
+						     <button (click)="deleteToken()" type="button" class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</button></div>
 					</div>
 					<div class="clear"></div>
 				</header>
@@ -57,15 +57,20 @@
 				<section class="row">
 
 					<div class="col-lg-4 col-sm-12 order-sm-1 order-lg-2">
-						<div class="card">
-							<div class="thumbnail">
+						<div class="card right-profile">
+							<div class="profile">
 								<div class="image">
-									<img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Tom_Hiddleston_%2827992938324%29_%28cropped%29.jpg/220px-Tom_Hiddleston_%2827992938324%29_%28cropped%29.jpg" alt="">
+									<img class="" [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" alt="">
+									
 								</div>
 								<div class="caption text-center">
 									<p>noobmaster69</p>
 								</div>
 							</div>
+							<br>
+							<h6>badass</h6>
+							<p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quod assumenda aliquam ea, omnis dolor molestias veniam nam magni corrupti. Voluptatibus sapiente optio tenetur harum! Provident earum modi doloribus magnam.</p>
+							<input value="Change picture" type='file' (change)="onSelectFile($event)">
 						</div>
 					</div>
 
