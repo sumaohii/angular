@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       console.log("Logged in! ");
       this.alertService.success(res.message+" Redirecting...");
       if(res.data.user.role=="user") setTimeout(() => {this.router.navigateByUrl('/dashboard');}, 2000);
-      else if(res.data.user.role=="admin") setTimeout(() => {this.router.navigateByUrl('/admin-dashboard/verify-kyc');}, 2000);
+      else if(res.data.user.role=="admin") setTimeout(() => {this.router.navigateByUrl('/admin-dashboard');}, 2000);
         }
     else {
         console.log ("Could not authenticate");

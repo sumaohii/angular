@@ -8,11 +8,3 @@ export interface NonKycUser {
     _id: string;
    
   }
-
-  // export interface AllNonKycUser {
-  //   status: number;
-  //   message: string;
-  //   // data<NonKycUser>:[
-    
-    
-  //   }

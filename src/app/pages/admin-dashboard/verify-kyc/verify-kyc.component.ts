@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import {AdminService} from '../../../services/admin.service';
 import {Router} from '@angular/router';
 import {UploadKycImg} from '../../../models/upload-kyc-img'
+
 @Component({
   selector: 'app-verify-kyc',
   templateUrl: './verify-kyc.component.html',

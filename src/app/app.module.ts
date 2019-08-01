@@ -25,7 +25,8 @@ import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import { LinkemailComponent } from './components/linkemail/linkemail.component';
 import { KycImageComponent } from './pages/kyc-image/kyc-image.component';
 import { HeaderService} from './services/header.service';
-import { VerifyKycComponent } from './pages/admin-dashboard/verify-kyc/verify-kyc.component'
+import { VerifyKycComponent } from './pages/admin-dashboard/verify-kyc/verify-kyc.component';
+import { MainDashboardComponent } from './pages/admin-dashboard/main-dashboard/main-dashboard.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { VerifyKycComponent } from './pages/admin-dashboard/verify-kyc/verify-ky
     LinkemailComponent,
     KycImageComponent,
     VerifyKycComponent,
+    MainDashboardComponent,
   ],
   imports: [
     BrowserModule,
