@@ -1,16 +1,29 @@
+<app-navbar></app-navbar>
+<div class="admin">
+  <div class="container">
+   <div class="row" style="padding-top: 100px;">
+    <div class="admin-main col-md-6 offset-md-3 p-4">
+      <div class="text-center fontCustom pt-3"><h2>Verify User KYC</h2></div>
+      <div class="text-center fontSmall pb-4"><span>User ID: </span><span>{{id}}</span></div>
+      <div *ngFor="let element of userImages">
+          <div class="row fontCustom col-md-12 pb-4">
+              <div class="col-sm-8">Photo of user's passport/ID</div> 
+              <div class="col-sm-4 text-center"><button class="btn btn-outline-secondary btn-sm" style="font-size: 16px;"><a href="http://142.93.253.93:81/{{element.path}}">View</a></button>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-6 offset-md-3 row pt-3">
+          <button class="col-md-5 btn btn-outline-primary">
+              Confirm
+          </button>
+
+          <button type="button" class="col-md-5 offset-md-2 btn btn-outline-primary"
+                  >Decline</button>
 
 
-  <table class="table table-hover table-stripe">
-    <thead>
-        <tr>
-            <th>Fullname</th><th>Status</th><th>Actions</th>
-          </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of allUser">
-        <td>{{user.profile.fullname}}</td>
-        <td>{{user.isKYCVerified}}</td>
-        <td><a routerLink="kycEdit:user_id" class="btn btn-sm"><i class="fa fa-edit"></i></a></td>
-      </tr>
-    </tbody>
-  </table>
+      </div>
+     </div>
+   </div>
+  </div>
+</div>
+<app-footer></app-footer>

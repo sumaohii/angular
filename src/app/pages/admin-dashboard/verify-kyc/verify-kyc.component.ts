@@ -1,21 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {AdminService} from '../../../services/admin.service';
-import { NonKycUser } from 'src/app/models/non-kyc-user';
+import {Router} from '@angular/router';
+import {UploadKycImg} from '../../../models/upload-kyc-img'
 @Component({
   selector: 'app-verify-kyc',
   templateUrl: './verify-kyc.component.html',
   styleUrls: ['./verify-kyc.component.css']
 })
 export class VerifyKycComponent implements OnInit {
-  allUser: NonKycUser[];
-  abc:any;
-  constructor(private adminService: AdminService) { }
-
+  id: string;
+  userImages: UploadKycImg[];
+  constructor(private adminService: AdminService, private router: Router, private route: ActivatedRoute) { }
+   
   ngOnInit() {
-    this.adminService.fetchAllNonKyc().subscribe((res)=>{
+    this.id = this.route.snapshot.paramMap.get('userId');
+    this.kycUser();
+}
+kycUser(){
+  this.adminService.userDetail(this.id).subscribe((res) => {
+      this.userImages = res.data;
       console.log(res);
-      this.allUser = res.data;
-    })
-  }
+  })
+}
+viewPhoto(){
 
+}
 }
