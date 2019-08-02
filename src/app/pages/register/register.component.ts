@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
         if (res.status==1) {
             console.log(res.message);
             this.alertService.success(res.message +" Redirecting...");
-            setTimeout(() => {this.router.navigateByUrl('/verifyemail');},3000); 
+            setTimeout(() => {this.router.navigateByUrl('/verifyemail');},1500); 
           }
         else if (res.status==0) { console.log(res.message);
           this.alertService.error(res.message)

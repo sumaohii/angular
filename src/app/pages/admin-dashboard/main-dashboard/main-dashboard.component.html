@@ -1,58 +1,69 @@
 <app-navbar></app-navbar>
 <div class="admin">
   <div class="container">
-   <div class="row" style="padding-top: 100px;">
-    <div class="admin-main col-md-12 p-4">
-      <div class="text-center fontCustom pt-3 pb-5"><h2>ADMIN DASHBOARD</h2></div>
+    <div class="row" style="padding-top: 100px;">
+      <div class="admin-main col-md-12 p-4">
+        <div class="text-center fontCustom pt-3 pb-5">
+          <h2>ADMIN DASHBOARD</h2>
+        </div>
 
-<div class="container" style="background-color: lightblue">
-  <div class ="row border rounded pt-1 pb-1">
-    <div class="col-sm-8 fontCustom text-center pt-1">All non KYC-verified users</div>
-    <div class="col-sm-4 fontCustom text-center"><button (click)="fecthAll();toggleShowtable()" ng-click="showtable = !showtable"  class="btn btn-outline-secondary btn-sm" style="font-size: 16px;">Show/Hide</button></div>   
-  </div>
-      <div *ngIf="showtable == false"></div>
-      <div  *ngIf="showtable == true">
-          <div class ="row border border-info rounded pt-1 pb-1">
-          <table class="text-center size-table table table-hover table-stripe pl-1 pr-1" style="background-color: ivory; overflow-y: scroll;" ng-show="showtable">
-           <thead>
-              <tr>
-                <th>Fullname</th><th>Status</th><th>Actions</th>
-             </tr>
-          </thead>
-         <tbody>
-            <tr *ngFor="let user of allUser">
-               <td>{{user.profile.fullname}}</td>
-               <td>{{user.isKYCVerified}}</td>
-               <td><a routerLink="/admin-dashboard/verify-kyc/{{user._id}}" class="btn btn-sm"><i class="fa fa-edit"></i></a></td>
-            </tr>
-         </tbody>
-        </table>
+        <div class="container" style="background-color: lightblue">
+          <div class="row border rounded pt-1 pb-1">
+            <div class="col-sm-8 fontCustom text-center pt-1">All non KYC-verified users</div>
+            <div class="col-sm-4 fontCustom text-center"><button (click)="fecthAll();toggleShowtable()"
+                ng-click="showtable = !showtable" class="btn btn-outline-secondary btn-sm"
+                style="font-size: 16px;">Show/Hide</button></div>
+          </div>
+          <div *ngIf="showtable == false"></div>
+          <div *ngIf="showtable == true">
+            <div class="row border border-info rounded pt-1 pb-1">
+              <table class="text-center size-table table table-hover table-stripe pl-1 pr-1"
+                style="background-color: ivory; overflow-y: scroll;" ng-show="showtable">
+                <thead>
+                  <tr>
+                    <th>Fullname</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of allUser">
+                    <td>{{user.profile.fullname}}</td>
+                    <td>{{user.isKYCVerified}}</td>
+                    <td><a routerLink="/admin-dashboard/verify-kyc/{{user._id}}" class="btn btn-sm"><i
+                          class="fa fa-edit"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="pt-2"></div>
+        <div class="container" style="background-color:rgb(253, 206, 213)">
+          <div class="row border rounded pt-1 pb-1">
+            <div class="col-sm-8 fontCustom text-center pt-1">Real-time active users display</div>
+            <div class="col-sm-4 fontCustom text-center"><button class="btn btn-outline-secondary btn-sm"
+                style="font-size: 16px;">Show/Hide</button></div>
+          </div>
+        </div>
+        <div class="pt-2"></div>
+        <div class="container" style="background-color:rgb(196, 245, 196)">
+          <div class="row border rounded pt-1 pb-1">
+            <div class="col-sm-8 fontCustom text-center pt-1">New users in the last 7 days</div>
+            <div class="col-sm-4 fontCustom text-center"><button class="btn btn-outline-secondary btn-sm"
+                style="font-size: 16px;">Show/Hide</button></div>
+          </div>
+        </div>
+        <div class="pt-2"></div>
+        <div class="container" style="background-color:rgb(225, 189, 235)">
+          <div class="row border rounded pt-1 pb-1">
+            <div class="col-sm-8 fontCustom text-center pt-1">Transaction statistics and calculations</div>
+            <div class="col-sm-4 fontCustom text-center"><button class="btn btn-outline-secondary btn-sm"
+                style="font-size: 16px;">Show/Hide</button></div>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
-</div>
-<div class="pt-2"></div>
-<div class="container" style="background-color:rgb(253, 206, 213)">
-    <div class ="row border rounded pt-1 pb-1">
-      <div class="col-sm-8 fontCustom text-center pt-1">Real-time active users display</div>
-      <div class="col-sm-4 fontCustom text-center"><button class="btn btn-outline-secondary btn-sm" style="font-size: 16px;">Show/Hide</button></div>   
-    </div>
-</div>
-<div class="pt-2"></div>
-<div class="container" style="background-color:rgb(196, 245, 196)">
-    <div class ="row border rounded pt-1 pb-1">
-      <div class="col-sm-8 fontCustom text-center pt-1">New users in the last 7 days</div>
-      <div class="col-sm-4 fontCustom text-center"><button class="btn btn-outline-secondary btn-sm" style="font-size: 16px;">Show/Hide</button></div>   
-    </div>
-</div>
-<div class="pt-2"></div>
-<div class="container" style="background-color:rgb(225, 189, 235)">
-    <div class ="row border rounded pt-1 pb-1">
-      <div class="col-sm-8 fontCustom text-center pt-1">Transaction statistics and calculations</div>
-      <div class="col-sm-4 fontCustom text-center"><button class="btn btn-outline-secondary btn-sm" style="font-size: 16px;">Show/Hide</button></div>   
-    </div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <app-footer></app-footer>

@@ -38,7 +38,7 @@ export class KycImageComponent implements OnInit {
     this.form.append("myImage", this.selectedFile2);
     return this.auth.sendKycImage(this.form).subscribe((res) => {
       console.log(res.message);
-      setTimeout(() => {this.router.navigateByUrl('/dashboard');}, 1500);
+      setTimeout(() => {this.router.navigateByUrl('/dashboard');},0);
   })
   }
 }
