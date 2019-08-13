@@ -4,6 +4,7 @@
    <div class="row" style="padding-top: 100px;">
     <div class="admin-main col-md-6 offset-md-3 p-4">
       <div class="text-center fontCustom pt-3"><h2>Verify User KYC</h2></div>
+      <alert ></alert>
       <div class="text-center fontSmall pb-4"><span>User ID: </span><span>{{id}}</span></div>
       <div *ngFor="let element of userImages">
           <div class="row fontCustom col-md-12 pb-4">
@@ -13,11 +14,11 @@
           </div>
       </div>
       <div class="col-md-6 offset-md-3 row pt-3">
-          <button class="col-md-5 btn btn-outline-primary">
+          <button (click)="confirm()" class="col-md-5 btn btn-outline-primary">
               Confirm
           </button>
 
-          <button type="button" class="col-md-5 offset-md-2 btn btn-outline-primary"
+          <button (click)="decline()" type="button" class="col-md-5 offset-md-2 btn btn-outline-primary"
                   >Decline</button>
 
 

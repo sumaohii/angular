@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService} from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-
+import { AlertService} from '../../components/alert/alert.service';
 @Component({
   selector: 'app-kyc-image',
   templateUrl: './kyc-image.component.html',
@@ -17,7 +17,7 @@ export class KycImageComponent implements OnInit {
 
   form= new FormData();
 
-  constructor(private auth: AuthService, private router:Router, private fb: FormBuilder) { }
+  constructor(private auth: AuthService, private router:Router, private fb: FormBuilder, private alert: AlertService) { }
 
   ngOnInit() {
     this.auth.fetchKycStatus().subscribe((res)=>{
@@ -37,8 +37,11 @@ export class KycImageComponent implements OnInit {
     this.form.append("myImage", this.selectedFile);
     this.form.append("myImage", this.selectedFile2);
     return this.auth.sendKycImage(this.form).subscribe((res) => {
-      console.log(res.message);
-      setTimeout(() => {this.router.navigateByUrl('/dashboard');},0);
+
+      console.log(res.message+". Redirecting to main profile...");
+      this.alert.success(res.message);
+      setTimeout(() => {this.router.navigateByUrl('/dashboard');}, 1500);
+
   })
   }
 }
